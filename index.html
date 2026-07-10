@@ -209,14 +209,16 @@
             display: flex;
             align-items: center;
             gap: 4px;
-        }
-
-        .menu a i {
-            font-size: 0.9rem;
+            cursor: pointer;
         }
 
         .menu a:hover {
             color: #b88a4b;
+        }
+
+        .menu a.active {
+            color: #b88a4b;
+            font-weight: 700;
         }
 
         /* ===== HERO ===== */
@@ -394,6 +396,20 @@
             transform: translateY(-4px);
         }
 
+        .category.active {
+            border-color: #b88a4b;
+            background-color: #d9b382;
+            color: #fff;
+        }
+
+        .category.active i {
+            color: #fff;
+        }
+
+        .category.active span {
+            color: #fff;
+        }
+
         .category i {
             font-size: 1.8rem;
             color: #b88a4b;
@@ -405,6 +421,18 @@
             font-size: 0.8rem;
             font-weight: 500;
             color: #5d432b;
+        }
+
+        /* ===== CONTADOR DE PRODUTOS ===== */
+        .product-counter {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #8b6f51;
+        }
+
+        .product-counter strong {
+            color: #4d2e1b;
         }
 
         /* ===== PRODUTOS ===== */
@@ -427,12 +455,28 @@
             transition: 0.3s;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         .product-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 12px 30px rgba(150, 110, 70, 0.12);
             border-color: #d9b382;
+        }
+
+        /* Selo de desconto */
+        .product-card .discount-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
         }
 
         .product-card img {
@@ -456,6 +500,10 @@
             color: #3e2e1f;
             margin-bottom: 4px;
             line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .product-info .category-tag {
@@ -469,48 +517,86 @@
             margin-right: 4px;
         }
 
+        /* ===== PREÇOS ===== */
+        .prices {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+
+        .price-old {
+            font-size: 0.8rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .price-new {
+            font-weight: 700;
+            color: #e74c3c;
+            font-size: 1.2rem;
+        }
+
+        .price-new small {
+            font-size: 0.7rem;
+            font-weight: 400;
+        }
+
         .product-card .card-footer {
             margin-top: auto;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 10px;
             border-top: 1px solid #f0e2d2;
             padding-top: 12px;
         }
 
-        .product-card .price {
-            font-weight: 700;
-            color: #4d2e1b;
-            font-size: 1rem;
-            background: #fcf3e8;
-            padding: 4px 12px;
-            border-radius: 30px;
-            border: 1px solid #e9d6be;
-        }
-
-        .btn-afiliado {
-            background-color: #f5ebe0;
-            color: #4d2e1b;
-            padding: 6px 14px;
+        /* ===== BOTÃO COMPRAR ESTILIZADO ===== */
+        .btn-comprar {
+            background: linear-gradient(135deg, #d9b382 0%, #b88a4b 100%);
+            color: #fff;
+            padding: 10px 16px;
             border-radius: 30px;
             text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border: 1px solid #d9b382;
-            transition: 0.2s;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: none;
+            transition: 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(184, 138, 75, 0.3);
+            animation: pulse 2s infinite;
         }
 
-        .btn-afiliado:hover {
-            background-color: #d9b382;
-            color: #fff;
-            border-color: #b88a4b;
+        .btn-comprar:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(184, 138, 75, 0.4);
+            background: linear-gradient(135deg, #c9a06a 0%, #a87f58 100%);
         }
 
-        .btn-afiliado i {
-            font-size: 0.8rem;
+        .btn-comprar:active {
+            transform: scale(0.96);
+        }
+
+        .btn-comprar i {
+            font-size: 1rem;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 12px rgba(184, 138, 75, 0.3);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(184, 138, 75, 0.5);
+            }
+            100% {
+                box-shadow: 0 4px 12px rgba(184, 138, 75, 0.3);
+            }
         }
 
         /* ===== MENSAGEM DE NENHUM RESULTADO ===== */
@@ -686,15 +772,22 @@
         }
 
         /* ===== RESPONSIVO ===== */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .hero-grid {
                 grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
             }
 
             .hero-text h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
+        }
 
+        @media (max-width: 768px) {
             .header-grid {
                 flex-direction: column;
                 align-items: stretch;
@@ -710,10 +803,28 @@
 
             .products-grid {
                 grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 16px;
             }
 
             .category-grid {
                 grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            }
+
+            .hero-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .product-info h4 {
+                font-size: 0.85rem;
+            }
+
+            .price-new {
+                font-size: 1rem;
+            }
+
+            .btn-comprar {
+                font-size: 0.75rem;
+                padding: 8px 12px;
             }
         }
 
@@ -723,8 +834,90 @@
                 gap: 12px;
             }
 
+            .product-info {
+                padding: 10px 12px 12px;
+            }
+
             .product-info h4 {
+                font-size: 0.75rem;
+                -webkit-line-clamp: 2;
+            }
+
+            .price-new {
+                font-size: 0.9rem;
+            }
+
+            .price-old {
+                font-size: 0.65rem;
+            }
+
+            .btn-comprar {
+                font-size: 0.65rem;
+                padding: 6px 10px;
+            }
+
+            .btn-comprar i {
+                font-size: 0.7rem;
+            }
+
+            .product-card .discount-badge {
+                font-size: 0.6rem;
+                padding: 2px 10px;
+                top: 8px;
+                right: 8px;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            .hero {
+                padding: 30px 0 20px;
+            }
+
+            .hero-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+
+            .category {
+                padding: 12px 4px;
+            }
+
+            .category i {
+                font-size: 1.4rem;
+            }
+
+            .category span {
+                font-size: 0.65rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .product-info {
+                padding: 8px 8px 10px;
+            }
+
+            .product-info h4 {
+                font-size: 0.65rem;
+            }
+
+            .price-new {
                 font-size: 0.8rem;
+            }
+
+            .btn-comprar {
+                font-size: 0.6rem;
+                padding: 4px 8px;
             }
         }
     </style>
@@ -734,7 +927,17 @@
 <body>
 
     <!-- ===== TOP BAR ===== -->
-    
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-left">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>Ofertas atualizadas diariamente</span>
+            </div>
+            <div class="top-right">
+                <a href="#"><i class="bi bi-whatsapp"></i> Atendimento</a>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== HEADER ===== -->
     <header>
@@ -771,16 +974,30 @@
         </div>
     </header>
 
-    
+    <!-- ===== MENU ===== -->
+    <nav class="menu">
+        <div class="container">
+            <a href="#" class="active" data-categoria="todos"><i class="bi bi-grid-fill"></i> Todos</a>
+            <a href="#" data-categoria="panelas"><i class="bi bi-fire"></i> Panelas</a>
+            <a href="#" data-categoria="copos"><i class="bi bi-cup-straw"></i> Copos</a>
+            <a href="#" data-categoria="potes"><i class="bi bi-box-seam"></i> Potes</a>
+            <a href="#" data-categoria="utensilios"><i class="bi bi-egg-fried"></i> Utensílios</a>
+            <a href="#" data-categoria="talheres"><i class="bi bi-basket2"></i> Talheres</a>
+            <a href="#" data-categoria="eletronicos"><i class="bi bi-lightning"></i> Eletrônicos</a>
+            <a href="#" data-categoria="cafe"><i class="bi bi-cup-hot"></i> Café</a>
+            <a href="#" data-categoria="assadeiras"><i class="bi bi-grid-3x3-gap-fill"></i> Assadeiras</a>
+        </div>
+    </nav>
+
     <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="container hero-grid">
             <div class="hero-text">
-                <span class="badge">NOVAS OFERTAS</span>
-                <h2>Utensílios para sua casa com os melhores preços</h2>
+                <span class="badge"> OFERTAS IMPERDÍVEIS</span>
+                <h2>Utensílios para sua casa com até <span style="color:#e74c3c;">50% OFF</span></h2>
                 <p>
-                    Escolha seu produto, clique em <strong>Ver Oferta</strong>
-                    e finalize sua compra diretamente no Mercado Livre.
+                    Escolha seu produto, clique em <strong>Comprar</strong>
+                    e finalize sua compra diretamente no Mercado Livre com preços incríveis!
                 </p>
                 <div class="hero-buttons">
                     <a href="#produtos" class="btn-primary">Ver Produtos</a>
@@ -808,8 +1025,8 @@
             </div>
             <div class="benefit">
                 <i class="bi bi-tags"></i>
-                <h3>Melhores preços</h3>
-                <p>Ofertas selecionadas</p>
+                <h3>Preços com desconto</h3>
+                <p>Ofertas exclusivas</p>
             </div>
             <div class="benefit">
                 <i class="bi bi-stars"></i>
@@ -826,36 +1043,40 @@
                 <h2>Categorias</h2>
                 <p>Encontre exatamente o que procura para sua casa</p>
             </div>
-            <div class="category-grid">
-                <div class="category">
+            <div class="category-grid" id="categoryGrid">
+                <div class="category active" data-categoria="todos">
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Todos</span>
+                </div>
+                <div class="category" data-categoria="panelas">
                     <i class="bi bi-fire"></i>
                     <span>Panelas</span>
                 </div>
-                <div class="category">
+                <div class="category" data-categoria="copos">
                     <i class="bi bi-cup-straw"></i>
                     <span>Copos</span>
                 </div>
-                <div class="category">
+                <div class="category" data-categoria="potes">
                     <i class="bi bi-box-seam"></i>
                     <span>Potes</span>
                 </div>
-                <div class="category">
+                <div class="category" data-categoria="utensilios">
                     <i class="bi bi-egg-fried"></i>
                     <span>Utensílios</span>
                 </div>
-                <div class="category">
+                <div class="category" data-categoria="talheres">
                     <i class="bi bi-basket2"></i>
                     <span>Talheres</span>
                 </div>
-                <div class="category">
+                <div class="category" data-categoria="eletronicos">
                     <i class="bi bi-lightning"></i>
                     <span>Eletrônicos</span>
                 </div>
-                <div class="category">
+                <div class="category" data-categoria="cafe">
                     <i class="bi bi-cup-hot"></i>
                     <span>Café</span>
                 </div>
-                <div class="category">
+                <div class="category" data-categoria="assadeiras">
                     <i class="bi bi-grid-3x3-gap-fill"></i>
                     <span>Assadeiras</span>
                 </div>
@@ -868,7 +1089,10 @@
         <div class="container">
             <div class="section-title">
                 <h2>Utensílios em destaque</h2>
-                <p>Os melhores produtos selecionados para sua casa</p>
+                <p>Os melhores produtos selecionados para sua casa com preços especiais</p>
+            </div>
+            <div class="product-counter" id="productCounter">
+                Mostrando <strong id="countDisplay">0</strong> produtos
             </div>
             <div id="productsContainer" class="products-grid">
                 <!-- JavaScript irá inserir os cards aqui -->
@@ -932,43 +1156,148 @@
     </footer>
 
     <script>
-        // ===== LISTA DE PRODUTOS =====
+        // ===== LISTA DE PRODUTOS COM PREÇO ANTIGO E NOVO =====
         const produtos = [
-            { nome: "Panela De Pressão 4,5 Litros Antiaderente Fechamento Externo", img: "https://http2.mlstatic.com/D_NQ_NP_2X_641732-MLA113667685805_062026-F.webp", link: "https://meli.la/2URknV7", preco: "R$ 139,90" },
-            { nome: "Jogo De Xícaras Com Pires 6 Pç Bubly Bolha Perola Cafe Cha", img: "https://http2.mlstatic.com/D_NQ_NP_2X_683217-MLB111620874038_062026-F.webp", link: "https://meli.la/2NBWKLx", preco: "R$ 36,77" },
-            { nome: "Kit 10 Potes Herméticos Vidro 640ml Starhouse Marmita Forno Micro-ondas Airfryer com 4 travas de super vedação", img: "https://http2.mlstatic.com/D_NQ_NP_2X_942823-MLA113526261849_062026-F.webp", link: "https://meli.la/23Lr4qM", preco: "R$ 95,00" },
-            { nome: "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças Tramontina", img: "https://http2.mlstatic.com/D_NQ_NP_2X_885228-MLA105354697197_012026-F.webp", link: "https://meli.la/2YMZV9n", preco: "R$ 76,94" },
-            { nome: "Panela De Arroz Fast Rice 5 Premium Mondial 400W - NPE-08-5X", img: "https://http2.mlstatic.com/D_NQ_NP_2X_980379-MLA100008293867_122025-F.webp", link: "https://meli.la/1Ygwrz8", preco: "R$ 144,43" },
-            { nome: "Jogo 3 forma assadeira bolo torta retangular 1-2-3 e68", img: "https://http2.mlstatic.com/D_NQ_NP_2X_844365-MLA100105834885_122025-F.webp", link: "https://meli.la/18cG1xo", preco: "R$ 49,90" },
-            { nome: "Conjunto Panelas Antiaderente 10 Peças Teflon Várias Cores", img: "https://http2.mlstatic.com/D_NQ_NP_2X_899708-MLB111357520902_052026-F-conjunto-panelas-antiaderente-10-pecas-teflon-varias-cores.webp", link: "https://meli.la/1fbogTv", preco: "R$ 209,90" },
-            { nome: "Liquidificador Mondial Turbo Black L900fb 5 Velocidades", img: "https://http2.mlstatic.com/D_NQ_NP_2X_775074-MLA100069529501_122025-F.webp", link: "https://meli.la/1Utkhfu", preco: "R$ 126,14" },
-            { nome: "Grill E Sanduicheira PGR21PI Maxx Clean 1000W Cinza Philco", img: "https://http2.mlstatic.com/D_NQ_NP_2X_742609-MLA95694260070_102025-F.webp", link: "https://meli.la/18HuetR", preco: "R$ 134,35" },
-            { nome: "FORNO ELÉTRICO HQ 48D 2000W PRETO", img: "https://http2.mlstatic.com/D_NQ_NP_2X_992715-MLA95808455335_102025-F.webp", link: "https://meli.la/2kBmDCg", preco: "R$ 349,00" },
-            { nome: "Mini Mixer Misturador De Bebidas Elétrico 2 Em 1 Portátil Recarregável Mexedor De Ovos Whey Leite Café Espuma Shake Drinks Capuccino Suco Comica", img: "https://http2.mlstatic.com/D_NQ_NP_2X_906444-MLA113292060459_062026-F.webp", link: "https://meli.la/1m21XXH", preco: "R$ 21,99" },
-            { nome: "Jogo de Copos de Vidro Long Drink para Água e Suco 255ml 6pcs Ruvolo", img: "https://http2.mlstatic.com/D_NQ_NP_2X_810600-MLA111193875310_052026-F.webp", link: "https://meli.la/1RKzvvT", preco: "R$ 27,30" }
+            { 
+                nome: "Panela De Pressão 4,5 Litros Antiaderente", 
+                img: "https://http2.mlstatic.com/D_NQ_NP_2X_641732-MLA113667685805_062026-F.webp", 
+                link: "https://meli.la/2URknV7", 
+                precoAntigo: 189.90,
+                precoNovo: 139.90,
+                categoria: "panelas"
+            },
+            { 
+                nome: "Jogo De Xícaras Com Pires 6 Pç Bubly Bolha Perola", 
+                img: "https://http2.mlstatic.com/D_NQ_NP_2X_683217-MLB111620874038_062026-F.webp", 
+                link: "https://meli.la/2NBWKLx", 
+                precoAntigo: 49.90,
+                precoNovo: 36.77,
+                categoria: "copos"
+            },
+            { 
+                nome: "Kit 10 Potes Herméticos Vidro 640ml Starhouse", 
+                img: "https://http2.mlstatic.com/D_NQ_NP_2X_942823-MLA113526261849_062026-F.webp", 
+                link: "https://meli.la/23Lr4qM", 
+                precoAntigo: 129.90,
+                precoNovo: 95.00,
+                categoria: "potes"
+            },
+            { 
+                nome: "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças", 
+                img: "https://http2.mlstatic.com/D_NQ_NP_2X_885228-MLA105354697197_012026-F.webp", 
+                link: "https://meli.la/2YMZV9n", 
+                precoAntigo: 99.90,
+                precoNovo: 76.94,
+                categoria: "talheres"
+            },
+            { 
+                nome: "Panela De Arroz Fast Rice 5 Premium Mondial 400W", 
+                img: "https://http2.mlstatic.com/D_NQ_NP_2X_980379-MLA100008293867_122025-F.webp", 
+                link: "https://meli.la/1Ygwrz8", 
+                precoAntigo: 199.90,
+                precoNovo: 144.43,
+                categoria: "eletronicos"
+            },
+            { 
+                nome: "Jogo 3 Formas Assadeira Bolo Torta Retangular", 
+                img: "https://http2.mlstatic.com/D_NQ_NP_2X_844365-MLA100105834885_122025-F.webp", 
+                link: "https://meli.la/18cG1xo", 
+                precoAntigo: 69.90,
+                precoNovo: 49.90,
+                categoria: "assadeiras"
+            },
+            { 
+                nome: "Conjunto Panelas Antiaderente 10 Peças Teflon", 
+                img: "https://http2.mlstatic.com/D_NQ_NP_2X_899708-MLB111357520902_052026-F-conjunto-panelas-antiaderente-10-pecas-teflon-varias-cores.webp", 
+                link: "https://meli.la/1fbogTv", 
+                precoAntigo: 289.90,
+                precoNovo: 209.90,
+                categoria: "panelas"
+            },
+            { 
+                nome: "Liquidificador Mondial Turbo Black 5 Velocidades", 
+                img: "https://http2.mlstatic.com/D_NQ_NP_2X_775074-MLA100069529501_122025-F.webp", 
+                link: "https://meli.la/1Utkhfu", 
+                precoAntigo: 179.90,
+                precoNovo: 126.14,
+                categoria: "eletronicos"
+            },
+            { 
+                nome: "Grill E Sanduicheira Maxx Clean 1000W Philco", 
+                img: "https://http2.mlstatic.com/D_NQ_NP_2X_742609-MLA95694260070_102025-F.webp", 
+                link: "https://meli.la/18HuetR", 
+                precoAntigo: 189.90,
+                precoNovo: 134.35,
+                categoria: "eletronicos"
+            },
+            { 
+                nome: "FORNO ELÉTRICO HQ 48D 2000W PRETO", 
+                img: "https://http2.mlstatic.com/D_NQ_NP_2X_992715-MLA95808455335_102025-F.webp", 
+                link: "https://meli.la/2kBmDCg", 
+                precoAntigo: 499.90,
+                precoNovo: 349.00,
+                categoria: "eletronicos"
+            },
+            { 
+                nome: "Mini Mixer Misturador De Bebidas Elétrico Portátil", 
+                img: "https://http2.mlstatic.com/D_NQ_NP_2X_906444-MLA113292060459_062026-F.webp", 
+                link: "https://meli.la/1m21XXH", 
+                precoAntigo: 39.90,
+                precoNovo: 21.99,
+                categoria: "utensilios"
+            },
+            { 
+                nome: "Jogo de Copos de Vidro Long Drink 255ml 6pcs", 
+                img: "https://http2.mlstatic.com/D_NQ_NP_2X_810600-MLA111193875310_052026-F.webp", 
+                link: "https://meli.la/1RKzvvT", 
+                precoAntigo: 39.90,
+                precoNovo: 27.30,
+                categoria: "copos"
+            }
         ];
 
         // ===== VARIÁVEIS GLOBAIS =====
         const container = document.getElementById('productsContainer');
         let currentIndex = 0;
         const itemsPerLoad = 8;
-        let allCards = []; // Armazena todos os cards renderizados
-        let filteredProducts = []; // Produtos filtrados pela busca
+        let allCards = [];
+        let filteredProducts = [];
+        let currentCategory = 'todos';
+        let currentSearch = '';
+
+        // ===== FUNÇÃO PARA FORMATAR PREÇO =====
+        function formatPrice(value) {
+            return 'R$ ' + value.toFixed(2).replace('.', ',');
+        }
+
+        // ===== FUNÇÃO PARA CALCULAR DESCONTO =====
+        function calcularDesconto(precoAntigo, precoNovo) {
+            const desconto = Math.round(((precoAntigo - precoNovo) / precoAntigo) * 100);
+            return desconto;
+        }
 
         // ===== FUNÇÃO PARA CRIAR CARD =====
         function createCard(product) {
             const card = document.createElement('div');
             card.className = 'product-card';
             card.dataset.nome = product.nome.toLowerCase();
+            card.dataset.categoria = product.categoria;
+
+            const desconto = calcularDesconto(product.precoAntigo, product.precoNovo);
+
             card.innerHTML = `
+                ${desconto > 0 ? `<div class="discount-badge">-${desconto}%</div>` : ''}
                 <img src="${product.img}" alt="${product.nome}" loading="lazy">
                 <div class="product-info">
                     <h4>${product.nome}</h4>
-                    <div class="category-tag"><i class="bi bi-tag"></i> Utensílio doméstico</div>
+                    <div class="category-tag"><i class="bi bi-tag"></i> ${product.categoria.charAt(0).toUpperCase() + product.categoria.slice(1)}</div>
+                    <div class="prices">
+                        <span class="price-old">${formatPrice(product.precoAntigo)}</span>
+                        <span class="price-new">${formatPrice(product.precoNovo)} <small>à vista</small></span>
+                    </div>
                     <div class="card-footer">
-                        <span class="price">${product.preco}</span>
-                        <a href="${product.link}" target="_blank" rel="noopener noreferrer" class="btn-afiliado">
-                            <i class="bi bi-bag-fill"></i> Ver Oferta
+                        <a href="${product.link}" target="_blank" rel="noopener noreferrer" class="btn-comprar">
+                            <i class="bi bi-cart-plus-fill"></i> Comprar
                         </a>
                     </div>
                 </div>
@@ -976,11 +1305,17 @@
             return card;
         }
 
+        // ===== FUNÇÃO PARA ATUALIZAR CONTADOR =====
+        function updateCounter(count) {
+            document.getElementById('countDisplay').textContent = count;
+        }
+
         // ===== FUNÇÃO PARA RENDERIZAR PRODUTOS =====
         function renderProducts(products, append = true) {
             if (!append) {
                 container.innerHTML = '';
                 allCards = [];
+                currentIndex = 0;
             }
 
             const start = append ? allCards.length : 0;
@@ -994,10 +1329,13 @@
 
             currentIndex = end;
 
+            // Atualizar contador
+            updateCounter(allCards.length);
+
             // Atualizar botão "Carregar mais"
             const loadBtn = document.getElementById('loadMoreBtn');
-            if (currentIndex >= products.length) {
-                loadBtn.textContent = 'Todos os produtos carregados';
+            if (currentIndex >= products.length || products.length === 0) {
+                loadBtn.textContent = products.length === 0 ? 'Nenhum produto encontrado' : 'Todos os produtos carregados';
                 loadBtn.disabled = true;
             } else {
                 loadBtn.textContent = 'Carregar mais produtos';
@@ -1005,56 +1343,61 @@
             }
         }
 
-        // ===== FUNÇÃO DE BUSCA =====
-        function searchProducts(query) {
-            const searchTerm = query.toLowerCase().trim();
-            
-            // Limpar container e allCards
-            container.innerHTML = '';
-            allCards = [];
+        // ===== FUNÇÃO PARA FILTRAR PRODUTOS =====
+        function filterProducts() {
+            let filtered = [...produtos];
 
-            if (searchTerm === '') {
-                // Se busca estiver vazia, mostrar todos os produtos
-                filteredProducts = [...produtos];
-                currentIndex = 0;
-                renderProducts(filteredProducts);
-                return;
+            // Filtrar por categoria
+            if (currentCategory !== 'todos') {
+                filtered = filtered.filter(p => p.categoria === currentCategory);
             }
 
-            // Filtrar produtos
-            filteredProducts = produtos.filter(p => 
-                p.nome.toLowerCase().includes(searchTerm)
-            );
+            // Filtrar por busca
+            if (currentSearch.trim() !== '') {
+                const searchTerm = currentSearch.toLowerCase().trim();
+                filtered = filtered.filter(p => 
+                    p.nome.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            filteredProducts = filtered;
+            
+            // Limpar e renderizar
+            container.innerHTML = '';
+            allCards = [];
+            currentIndex = 0;
 
             if (filteredProducts.length === 0) {
-                // Mostrar mensagem de nenhum resultado
                 container.innerHTML = `
                     <div class="no-results">
                         <i class="bi bi-search"></i>
-                        <p>Nenhum produto encontrado para "<strong>${query}</strong>"</p>
-                        <p style="font-size: 0.9rem; margin-top: 8px;">Tente buscar por outro termo</p>
+                        <p>Nenhum produto encontrado</p>
+                        <p style="font-size: 0.9rem; margin-top: 8px;">Tente buscar por outro termo ou categoria</p>
                     </div>
                 `;
-                document.getElementById('loadMoreBtn').textContent = 'Todos os produtos carregados';
+                document.getElementById('loadMoreBtn').textContent = 'Nenhum produto encontrado';
                 document.getElementById('loadMoreBtn').disabled = true;
+                updateCounter(0);
                 return;
             }
 
-            // Renderizar resultados da busca
-            currentIndex = 0;
             renderProducts(filteredProducts);
+        }
+
+        // ===== FUNÇÃO DE BUSCA =====
+        function searchProducts(query) {
+            currentSearch = query;
+            filterProducts();
         }
 
         // ===== EVENTOS DA BUSCA =====
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
 
-        // Buscar ao clicar no botão
         searchButton.addEventListener('click', function() {
             searchProducts(searchInput.value);
         });
 
-        // Buscar ao pressionar Enter
         searchInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
@@ -1062,16 +1405,59 @@
             }
         });
 
-        // Buscar em tempo real (opcional - descomente se quiser)
-        // searchInput.addEventListener('input', function() {
-        //     searchProducts(this.value);
-        // });
+        // Busca em tempo real (opcional)
+        searchInput.addEventListener('input', function() {
+            searchProducts(this.value);
+        });
+
+        // ===== EVENTOS DAS CATEGORIAS =====
+        document.querySelectorAll('.category').forEach(cat => {
+            cat.addEventListener('click', function() {
+                // Remover active de todas
+                document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+
+                // Atualizar menu também
+                const categoria = this.dataset.categoria;
+                document.querySelectorAll('.menu a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.categoria === categoria) {
+                        link.classList.add('active');
+                    }
+                });
+
+                currentCategory = categoria;
+                filterProducts();
+            });
+        });
+
+        // ===== EVENTOS DO MENU =====
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remover active de todos
+                document.querySelectorAll('.menu a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                // Atualizar categorias também
+                const categoria = this.dataset.categoria;
+                document.querySelectorAll('.category').forEach(cat => {
+                    cat.classList.remove('active');
+                    if (cat.dataset.categoria === categoria) {
+                        cat.classList.add('active');
+                    }
+                });
+
+                currentCategory = categoria;
+                filterProducts();
+            });
+        });
 
         // ===== BOTÃO "CARREGAR MAIS" =====
         document.getElementById('loadMoreBtn').addEventListener('click', function() {
-            const productsToRender = filteredProducts.length > 0 ? filteredProducts : produtos;
-            if (currentIndex < productsToRender.length) {
-                renderProducts(productsToRender);
+            if (currentIndex < filteredProducts.length) {
+                renderProducts(filteredProducts);
             }
         });
 
