@@ -118,11 +118,17 @@
             font-weight: 400;
         }
 
-        .search {
-            display: flex;
+        /* ===== SEARCH COM AUTOCOMPLETE ===== */
+        .search-wrapper {
+            position: relative;
             flex: 1;
             max-width: 480px;
             min-width: 200px;
+        }
+
+        .search {
+            display: flex;
+            width: 100%;
         }
 
         .search input {
@@ -155,6 +161,99 @@
         .search button:hover {
             background-color: #b88a4b;
             border-color: #b88a4b;
+        }
+
+        /* ===== SUGESTÕES DE BUSCA (AUTOCOMPLETE) ===== */
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border: 2px solid #e9d6be;
+            border-top: none;
+            border-radius: 0 0 20px 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-suggestions.active {
+            display: block;
+        }
+
+        .search-suggestions .suggestion-item {
+            padding: 10px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.2s;
+            border-bottom: 1px solid #f5ebe0;
+        }
+
+        .search-suggestions .suggestion-item:hover {
+            background-color: #f5ebe0;
+        }
+
+        .search-suggestions .suggestion-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-suggestions .suggestion-item img {
+            width: 36px;
+            height: 36px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #f7efe6;
+        }
+
+        .search-suggestions .suggestion-item .suggestion-info {
+            flex: 1;
+        }
+
+        .search-suggestions .suggestion-item .suggestion-info .suggestion-name {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #3e2e1f;
+        }
+
+        .search-suggestions .suggestion-item .suggestion-info .suggestion-price {
+            font-size: 0.75rem;
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .search-suggestions .suggestion-item .suggestion-info .suggestion-category {
+            font-size: 0.65rem;
+            color: #8b6f51;
+        }
+
+        .search-suggestions .suggestion-empty {
+            padding: 16px;
+            text-align: center;
+            color: #8b6f51;
+            font-size: 0.9rem;
+        }
+
+        .search-suggestions::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .search-suggestions::-webkit-scrollbar-track {
+            background: #f5ebe0;
+            border-radius: 10px;
+        }
+
+        .search-suggestions::-webkit-scrollbar-thumb {
+            background: #d9b382;
+            border-radius: 10px;
+        }
+
+        .search-suggestions::-webkit-scrollbar-thumb:hover {
+            background: #b88a4b;
         }
 
         .header-actions {
@@ -793,7 +892,7 @@
                 align-items: stretch;
             }
 
-            .search {
+            .search-wrapper {
                 max-width: 100%;
             }
 
@@ -895,6 +994,15 @@
             .category span {
                 font-size: 0.65rem;
             }
+
+            .search-suggestions .suggestion-item img {
+                width: 28px;
+                height: 28px;
+            }
+
+            .search-suggestions .suggestion-item .suggestion-info .suggestion-name {
+                font-size: 0.75rem;
+            }
         }
 
         @media (max-width: 360px) {
@@ -926,7 +1034,18 @@
 
 <body>
 
-    
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-left">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>Ofertas atualizadas diariamente</span>
+            </div>
+            <div class="top-right">
+                <a href="#"><i class="bi bi-whatsapp"></i> Atendimento</a>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== HEADER ===== -->
     <header>
@@ -941,9 +1060,13 @@
                         <span>Milhares de ofertas</span>
                     </div>
                 </a>
-                <div class="search">
-                    <input type="text" id="searchInput" placeholder="Buscar utensílios...">
-                    <button id="searchButton"><i class="bi bi-search"></i></button>
+                <div class="search-wrapper">
+                    <div class="search">
+                        <input type="text" id="searchInput" placeholder="Buscar utensílios..." autocomplete="off">
+                        <button id="searchButton"><i class="bi bi-search"></i></button>
+                    </div>
+                    <!-- SUGESTÕES DE BUSCA -->
+                    <div class="search-suggestions" id="searchSuggestions"></div>
                 </div>
                 <div class="header-actions">
                     <a href="#">
@@ -1145,7 +1268,7 @@
     </footer>
 
     <script>
-        // ===== LISTA DE PRODUTOS COM PREÇO ANTIGO E NOVO =====
+        // ===== LISTA DE PRODUTOS =====
         const produtos = [
             { 
                 nome: "Panela De Pressão 4,5 Litros Antiaderente", 
@@ -1361,6 +1484,10 @@
 
         // ===== VARIÁVEIS GLOBAIS =====
         const container = document.getElementById('productsContainer');
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const suggestionsContainer = document.getElementById('searchSuggestions');
+        
         let currentIndex = 0;
         const itemsPerLoad = 8;
         let allCards = [];
@@ -1432,10 +1559,8 @@
 
             currentIndex = end;
 
-            // Atualizar contador
             updateCounter(allCards.length);
 
-            // Atualizar botão "Carregar mais"
             const loadBtn = document.getElementById('loadMoreBtn');
             if (currentIndex >= products.length || products.length === 0) {
                 loadBtn.textContent = products.length === 0 ? 'Nenhum produto encontrado' : 'Todos os produtos carregados';
@@ -1450,12 +1575,10 @@
         function filterProducts() {
             let filtered = [...produtos];
 
-            // Filtrar por categoria
-            if (currentCategory !== 'todos') {
+            if (currentCategory !== 'todos' && currentSearch.trim() === '') {
                 filtered = filtered.filter(p => p.categoria === currentCategory);
             }
 
-            // Filtrar por busca
             if (currentSearch.trim() !== '') {
                 const searchTerm = currentSearch.toLowerCase().trim();
                 filtered = filtered.filter(p => 
@@ -1465,7 +1588,6 @@
 
             filteredProducts = filtered;
             
-            // Limpar e renderizar
             container.innerHTML = '';
             allCards = [];
             currentIndex = 0;
@@ -1474,7 +1596,7 @@
                 container.innerHTML = `
                     <div class="no-results">
                         <i class="bi bi-search"></i>
-                        <p>Nenhum produto encontrado</p>
+                        <p>Nenhum produto encontrado para "<strong>${currentSearch || 'esta categoria'}</strong>"</p>
                         <p style="font-size: 0.9rem; margin-top: 8px;">Tente buscar por outro termo ou categoria</p>
                     </div>
                 `;
@@ -1487,16 +1609,89 @@
             renderProducts(filteredProducts);
         }
 
+        // ===== FUNÇÃO PARA MOSTRAR SUGESTÕES =====
+        function showSuggestions(query) {
+            const searchTerm = query.toLowerCase().trim();
+            
+            if (searchTerm === '') {
+                suggestionsContainer.classList.remove('active');
+                suggestionsContainer.innerHTML = '';
+                return;
+            }
+
+            // Filtrar produtos que correspondem à busca
+            const matches = produtos.filter(p => 
+                p.nome.toLowerCase().includes(searchTerm)
+            );
+
+            // Limitar a 5 sugestões
+            const limited = matches.slice(0, 5);
+
+            if (limited.length === 0) {
+                suggestionsContainer.innerHTML = `
+                    <div class="suggestion-empty">
+                        <i class="bi bi-search" style="margin-right: 6px;"></i>
+                        Nenhum produto encontrado
+                    </div>
+                `;
+                suggestionsContainer.classList.add('active');
+                return;
+            }
+
+            let html = '';
+            limited.forEach(p => {
+                const desconto = calcularDesconto(p.precoAntigo, p.precoNovo);
+                html += `
+                    <div class="suggestion-item" data-nome="${p.nome}">
+                        <img src="${p.img}" alt="${p.nome}" loading="lazy">
+                        <div class="suggestion-info">
+                            <div class="suggestion-name">${p.nome}</div>
+                            <div class="suggestion-category">${p.categoria.charAt(0).toUpperCase() + p.categoria.slice(1)}</div>
+                            <div class="suggestion-price">${formatPrice(p.precoNovo)} ${desconto > 0 ? `<span style="color:#999;font-weight:400;text-decoration:line-through;font-size:0.65rem;">${formatPrice(p.precoAntigo)}</span>` : ''}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            suggestionsContainer.innerHTML = html;
+            suggestionsContainer.classList.add('active');
+
+            // Adicionar evento de clique em cada sugestão
+            document.querySelectorAll('.suggestion-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const nome = this.dataset.nome;
+                    searchInput.value = nome;
+                    suggestionsContainer.classList.remove('active');
+                    searchProducts(nome);
+                });
+            });
+        }
+
         // ===== FUNÇÃO DE BUSCA =====
         function searchProducts(query) {
             currentSearch = query;
+            
+            if (query.trim() !== '') {
+                currentCategory = 'todos';
+                
+                document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
+                const todosCat = document.querySelector('.category[data-categoria="todos"]');
+                if (todosCat) todosCat.classList.add('active');
+                
+                document.querySelectorAll('.menu a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.categoria === 'todos') {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
             filterProducts();
+            // Fechar sugestões após buscar
+            suggestionsContainer.classList.remove('active');
         }
 
-        // ===== EVENTOS DA BUSCA =====
-        const searchInput = document.getElementById('searchInput');
-        const searchButton = document.getElementById('searchButton');
-
+        // ===== EVENTOS DA BUSCA COM AUTOCOMPLETE =====
         searchButton.addEventListener('click', function() {
             searchProducts(searchInput.value);
         });
@@ -1508,19 +1703,29 @@
             }
         });
 
-        // Busca em tempo real (opcional)
+        // Mostrar sugestões enquanto digita
         searchInput.addEventListener('input', function() {
-            searchProducts(this.value);
+            showSuggestions(this.value);
+        });
+
+        // Fechar sugestões ao clicar fora
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-wrapper')) {
+                suggestionsContainer.classList.remove('active');
+            }
         });
 
         // ===== EVENTOS DAS CATEGORIAS =====
         document.querySelectorAll('.category').forEach(cat => {
             cat.addEventListener('click', function() {
-                // Remover active de todas
+                if (currentSearch.trim() !== '') {
+                    searchInput.value = '';
+                    currentSearch = '';
+                }
+                
                 document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
                 this.classList.add('active');
 
-                // Atualizar menu também
                 const categoria = this.dataset.categoria;
                 document.querySelectorAll('.menu a').forEach(link => {
                     link.classList.remove('active');
@@ -1531,6 +1736,7 @@
 
                 currentCategory = categoria;
                 filterProducts();
+                suggestionsContainer.classList.remove('active');
             });
         });
 
@@ -1539,11 +1745,14 @@
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                // Remover active de todos
+                if (currentSearch.trim() !== '') {
+                    searchInput.value = '';
+                    currentSearch = '';
+                }
+                
                 document.querySelectorAll('.menu a').forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
 
-                // Atualizar categorias também
                 const categoria = this.dataset.categoria;
                 document.querySelectorAll('.category').forEach(cat => {
                     cat.classList.remove('active');
@@ -1554,6 +1763,7 @@
 
                 currentCategory = categoria;
                 filterProducts();
+                suggestionsContainer.classList.remove('active');
             });
         });
 
