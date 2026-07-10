@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lar & Utensílios | Sua vitrine de ofertas</title>
+
+    <meta name="description"
+        content="Encontre os melhores utensílios para sua casa em um só lugar. Clique e compre diretamente no Mercado Livre.">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fdf8f0;
+            color: #3e2e1f;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== TOP BAR ===== */
+        .top-bar {
+            background-color: #d9b382;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            color: #fdf8f0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .top-left i {
+            margin-right: 6px;
+        }
+
+        .top-right a {
+            color: #fdf8f0;
+            text-decoration: none;
+        }
+
+        .top-right a i {
+            margin-right: 4px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: #fffbf5;
+            padding: 16px 0;
+            border-bottom: 2px solid #e9d6be;
+        }
+
+        .header-grid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #3e2e1f;
+        }
+
+        .logo-icon {
+            background-color: #d9b382;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.4rem;
+        }
+
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #4d2e1b;
+        }
+
+        .logo span {
+            font-size: 0.75rem;
+            color: #8b6f51;
+            font-weight: 400;
+        }
+
+        .search {
+            display: flex;
+            flex: 1;
+            max-width: 480px;
+            min-width: 200px;
+        }
+
+        .search input {
+            flex: 1;
+            padding: 10px 16px;
+            border: 2px solid #e9d6be;
+            border-radius: 30px 0 0 30px;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            background: #fffcf7;
+            color: #3e2e1f;
+            transition: border-color 0.3s;
+        }
+
+        .search input:focus {
+            border-color: #b88a4b;
+        }
+
+        .search button {
+            padding: 10px 18px;
+            background-color: #d9b382;
+            border: 2px solid #d9b382;
+            border-radius: 0 30px 30px 0;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+
+        .search button:hover {
+            background-color: #b88a4b;
+            border-color: #b88a4b;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-actions a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #5d432b;
+            font-size: 0.7rem;
+            transition: 0.2s;
+        }
+
+        .header-actions a i {
+            font-size: 1.3rem;
+            color: #8b6f51;
+        }
+
+        .header-actions a:hover {
+            color: #b88a4b;
+        }
+
+        .header-actions a:hover i {
+            color: #b88a4b;
+        }
+
+        /* ===== MENU ===== */
+        .menu {
+            background-color: #f5ebe0;
+            padding: 10px 0;
+            border-bottom: 1px solid #e9d6be;
+            overflow-x: auto;
+        }
+
+        .menu .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: nowrap;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #5d432b;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .menu a i {
+            font-size: 0.9rem;
+        }
+
+        .menu a:hover {
+            color: #b88a4b;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 50px 0 40px;
+            background: linear-gradient(135deg, #fffbf5 0%, #f5ebe0 100%);
+            border-bottom: 2px solid #e9d6be;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text .badge {
+            display: inline-block;
+            background-color: #d9b382;
+            color: #fff;
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4d2e1b;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .hero-text p {
+            color: #6b4f33;
+            font-size: 1rem;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .hero-text p strong {
+            color: #b88a4b;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: #d9b382;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background-color: #b88a4b;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #5d432b;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #d9b382;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f5ebe0;
+            border-color: #b88a4b;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(150, 110, 70, 0.15);
+        }
+
+        /* ===== BENEFÍCIOS ===== */
+        .benefits {
+            padding: 40px 0;
+            background-color: #fffbf5;
+            border-bottom: 2px solid #e9d6be;
+        }
+
+        .benefits .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .benefit {
+            text-align: center;
+            padding: 16px;
+        }
+
+        .benefit i {
+            font-size: 2.2rem;
+            color: #d9b382;
+            margin-bottom: 8px;
+        }
+
+        .benefit h3 {
+            font-size: 1rem;
+            color: #4d2e1b;
+        }
+
+        .benefit p {
+            font-size: 0.85rem;
+            color: #8b6f51;
+        }
+
+        /* ===== CATEGORIAS ===== */
+        .categories {
+            padding: 50px 0 40px;
+            background-color: #fdf8f0;
+            border-bottom: 2px solid #e9d6be;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4d2e1b;
+        }
+
+        .section-title p {
+            color: #8b6f51;
+            font-size: 0.95rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 16px;
+        }
+
+        .category {
+            background-color: #fffbf5;
+            border: 2px solid #e9d6be;
+            border-radius: 16px;
+            padding: 16px 8px;
+            text-align: center;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .category:hover {
+            border-color: #d9b382;
+            background-color: #f5ebe0;
+            transform: translateY(-4px);
+        }
+
+        .category i {
+            font-size: 1.8rem;
+            color: #b88a4b;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .category span {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #5d432b;
+        }
+
+        /* ===== PRODUTOS ===== */
+        .products {
+            padding: 50px 0 40px;
+            background-color: #fffbf5;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #f0e2d2;
+            overflow: hidden;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(150, 110, 70, 0.12);
+            border-color: #d9b382;
+        }
+
+        .product-card img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            background: #f7efe6;
+            padding: 8px;
+        }
+
+        .product-info {
+            padding: 14px 16px 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-info h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #3e2e1f;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .product-info .category-tag {
+            font-size: 0.7rem;
+            color: #8b6f51;
+            margin-bottom: 8px;
+        }
+
+        .product-info .category-tag i {
+            color: #b88a4b;
+            margin-right: 4px;
+        }
+
+        .product-card .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f0e2d2;
+            padding-top: 12px;
+        }
+
+        .product-card .price {
+            font-weight: 700;
+            color: #4d2e1b;
+            font-size: 1rem;
+            background: #fcf3e8;
+            padding: 4px 12px;
+            border-radius: 30px;
+            border: 1px solid #e9d6be;
+        }
+
+        .btn-afiliado {
+            background-color: #f5ebe0;
+            color: #4d2e1b;
+            padding: 6px 14px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid #d9b382;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-afiliado:hover {
+            background-color: #d9b382;
+            color: #fff;
+            border-color: #b88a4b;
+        }
+
+        .btn-afiliado i {
+            font-size: 0.8rem;
+        }
+
+        /* ===== MENSAGEM DE NENHUM RESULTADO ===== */
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8b6f51;
+            font-size: 1.1rem;
+            grid-column: 1 / -1;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            color: #d9b382;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .load-more {
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        .load-more button {
+            background-color: transparent;
+            border: 2px solid #d9b382;
+            color: #5d432b;
+            padding: 12px 40px;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .load-more button:hover {
+            background-color: #d9b382;
+            color: #fff;
+        }
+
+        .load-more button:disabled {
+            opacity: 0.6;
+            cursor: default;
+        }
+
+        .load-more button:disabled:hover {
+            background-color: transparent;
+            color: #5d432b;
+        }
+
+        /* ===== NEWSLETTER ===== */
+        .newsletter {
+            padding: 50px 0;
+            background: linear-gradient(135deg, #f5ebe0 0%, #e9d6be 100%);
+            text-align: center;
+            border-top: 2px solid #d9b382;
+            border-bottom: 2px solid #d9b382;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            color: #4d2e1b;
+        }
+
+        .newsletter p {
+            color: #5d432b;
+            margin-bottom: 16px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 18px;
+            border: 2px solid #d9b382;
+            border-radius: 30px 0 0 30px;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            background: #fffcf7;
+        }
+
+        .newsletter-form button {
+            padding: 12px 24px;
+            background-color: #d9b382;
+            border: 2px solid #d9b382;
+            border-radius: 0 30px 30px 0;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #b88a4b;
+            border-color: #b88a4b;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #f5ebe0;
+            padding: 40px 0 20px;
+            border-top: 2px solid #d9b382;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 32px;
+        }
+
+        .footer-grid h3 {
+            font-size: 1.4rem;
+            color: #4d2e1b;
+        }
+
+        .footer-grid h4 {
+            font-size: 1rem;
+            color: #4d2e1b;
+            margin-bottom: 8px;
+        }
+
+        .footer-grid p {
+            color: #6b4f33;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .footer-grid a {
+            display: block;
+            color: #6b4f33;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+            transition: 0.2s;
+        }
+
+        .footer-grid a:hover {
+            color: #b88a4b;
+        }
+
+        .footer-grid a i {
+            margin-right: 6px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid #e9d6be;
+            font-size: 0.75rem;
+            color: #8b6f51;
+        }
+
+        .footer-bottom .ml-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fffcf7;
+            padding: 6px 18px;
+            border-radius: 30px;
+            border: 1px solid #d9b382;
+            margin-top: 8px;
+        }
+
+        .footer-bottom .ml-badge i {
+            color: #b88a4b;
+            font-size: 1.2rem;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+
+            .header-grid {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search {
+                max-width: 100%;
+            }
+
+            .header-actions {
+                justify-content: center;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .product-info h4 {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <div class="header-grid">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="bi bi-house-fill"></i>
+                    </div>
+                    <div>
+                        <h1>Lar&Utensílios</h1>
+                        <span>Milhares de ofertas</span>
+                    </div>
+                </a>
+                <div class="search">
+                    <input type="text" id="searchInput" placeholder="Buscar utensílios...">
+                    <button id="searchButton"><i class="bi bi-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="#">
+                        <i class="bi bi-heart"></i>
+                        <span>Favoritos</span>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-fire"></i>
+                        <span>Promoções</span>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-whatsapp"></i>
+                        <span>Contato</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="badge">NOVAS OFERTAS</span>
+                <h2>Utensílios para sua casa com os melhores preços</h2>
+                <p>
+                    Escolha seu produto, clique em <strong>Ver Oferta</strong>
+                    e finalize sua compra diretamente no Mercado Livre.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#produtos" class="btn-primary">Ver Produtos</a>
+                    <a href="#categorias" class="btn-secondary">Categorias</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1678108040468-0cc9addd984d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Utensílios de cozinha">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BENEFÍCIOS ===== -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefit">
+                <i class="bi bi-truck"></i>
+                <h3>Entrega rápida</h3>
+                <p>Direto pelo Mercado Livre</p>
+            </div>
+            <div class="benefit">
+                <i class="bi bi-shield-check"></i>
+                <h3>Compra segura</h3>
+                <p>Plataforma oficial</p>
+            </div>
+            <div class="benefit">
+                <i class="bi bi-tags"></i>
+                <h3>Melhores preços</h3>
+                <p>Ofertas selecionadas</p>
+            </div>
+            <div class="benefit">
+                <i class="bi bi-stars"></i>
+                <h3>Produtos avaliados</h3>
+                <p>Itens populares</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORIAS ===== -->
+    <section class="categories" id="categorias">
+        <div class="container">
+            <div class="section-title">
+                <h2>Categorias</h2>
+                <p>Encontre exatamente o que procura para sua casa</p>
+            </div>
+            <div class="category-grid">
+                <div class="category">
+                    <i class="bi bi-fire"></i>
+                    <span>Panelas</span>
+                </div>
+                <div class="category">
+                    <i class="bi bi-cup-straw"></i>
+                    <span>Copos</span>
+                </div>
+                <div class="category">
+                    <i class="bi bi-box-seam"></i>
+                    <span>Potes</span>
+                </div>
+                <div class="category">
+                    <i class="bi bi-egg-fried"></i>
+                    <span>Utensílios</span>
+                </div>
+                <div class="category">
+                    <i class="bi bi-basket2"></i>
+                    <span>Talheres</span>
+                </div>
+                <div class="category">
+                    <i class="bi bi-lightning"></i>
+                    <span>Eletrônicos</span>
+                </div>
+                <div class="category">
+                    <i class="bi bi-cup-hot"></i>
+                    <span>Café</span>
+                </div>
+                <div class="category">
+                    <i class="bi bi-grid-3x3-gap-fill"></i>
+                    <span>Assadeiras</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUTOS ===== -->
+    <section class="products" id="produtos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Utensílios em destaque</h2>
+                <p>Os melhores produtos selecionados para sua casa</p>
+            </div>
+            <div id="productsContainer" class="products-grid">
+                <!-- JavaScript irá inserir os cards aqui -->
+            </div>
+            <div class="load-more">
+                <button id="loadMoreBtn">Carregar mais produtos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Receba novas ofertas</h2>
+            <p>Cadastre seu e-mail para acompanhar as promoções de utensílios</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Digite seu e-mail">
+                <button>Receber ofertas</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h3>Lar&Utensílios</h3>
+                <p>
+                    Uma vitrine moderna para encontrar os melhores utensílios
+                    para sua casa e comprar diretamente no Mercado Livre.
+                </p>
+            </div>
+            <div>
+                <h4>Institucional</h4>
+                <a href="#">Quem Somos</a>
+                <a href="#">Contato</a>
+                <a href="#">Política de Privacidade</a>
+            </div>
+            <div>
+                <h4>Categorias</h4>
+                <a href="#">Cozinha</a>
+                <a href="#">Decoração</a>
+                <a href="#">Organização</a>
+                <a href="#">Limpeza</a>
+            </div>
+            <div>
+                <h4>Redes Sociais</h4>
+                <a href="#"><i class="bi bi-instagram"></i> Instagram</a>
+                <a href="#"><i class="bi bi-facebook"></i> Facebook</a>
+                <a href="#"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <div class="ml-badge">
+                <i class="bi bi-bag-fill"></i>
+                <span>Site afiliado ao Mercado Livre</span>
+                <i class="bi bi-box-arrow-up-right"></i>
+            </div>
+            <p style="margin-top: 12px;">&copy; 2026 Lar&Utensílios · Todos os produtos são de terceiros · preços sujeitos a alteração</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== LISTA DE PRODUTOS =====
+        const produtos = [
+            { nome: "Panela De Pressão 4,5 Litros Antiaderente Fechamento Externo", img: "https://http2.mlstatic.com/D_NQ_NP_2X_641732-MLA113667685805_062026-F.webp", link: "https://meli.la/2URknV7", preco: "R$ 139,90" },
+            { nome: "Jogo De Xícaras Com Pires 6 Pç Bubly Bolha Perola Cafe Cha", img: "https://http2.mlstatic.com/D_NQ_NP_2X_683217-MLB111620874038_062026-F.webp", link: "https://meli.la/2NBWKLx", preco: "R$ 36,77" },
+            { nome: "Kit 10 Potes Herméticos Vidro 640ml Starhouse Marmita Forno Micro-ondas Airfryer com 4 travas de super vedação", img: "https://http2.mlstatic.com/D_NQ_NP_2X_942823-MLA113526261849_062026-F.webp", link: "https://meli.la/23Lr4qM", preco: "R$ 95,00" },
+            { nome: "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças Tramontina", img: "https://http2.mlstatic.com/D_NQ_NP_2X_885228-MLA105354697197_012026-F.webp", link: "https://meli.la/2YMZV9n", preco: "R$ 76,94" },
+            { nome: "Panela De Arroz Fast Rice 5 Premium Mondial 400W - NPE-08-5X", img: "https://http2.mlstatic.com/D_NQ_NP_2X_980379-MLA100008293867_122025-F.webp", link: "https://meli.la/1Ygwrz8", preco: "R$ 144,43" },
+            { nome: "Jogo 3 forma assadeira bolo torta retangular 1-2-3 e68", img: "https://http2.mlstatic.com/D_NQ_NP_2X_844365-MLA100105834885_122025-F.webp", link: "https://meli.la/18cG1xo", preco: "R$ 49,90" },
+            { nome: "Conjunto Panelas Antiaderente 10 Peças Teflon Várias Cores", img: "https://http2.mlstatic.com/D_NQ_NP_2X_899708-MLB111357520902_052026-F-conjunto-panelas-antiaderente-10-pecas-teflon-varias-cores.webp", link: "https://meli.la/1fbogTv", preco: "R$ 209,90" },
+            { nome: "Liquidificador Mondial Turbo Black L900fb 5 Velocidades", img: "https://http2.mlstatic.com/D_NQ_NP_2X_775074-MLA100069529501_122025-F.webp", link: "https://meli.la/1Utkhfu", preco: "R$ 126,14" },
+            { nome: "Grill E Sanduicheira PGR21PI Maxx Clean 1000W Cinza Philco", img: "https://http2.mlstatic.com/D_NQ_NP_2X_742609-MLA95694260070_102025-F.webp", link: "https://meli.la/18HuetR", preco: "R$ 134,35" },
+            { nome: "FORNO ELÉTRICO HQ 48D 2000W PRETO", img: "https://http2.mlstatic.com/D_NQ_NP_2X_992715-MLA95808455335_102025-F.webp", link: "https://meli.la/2kBmDCg", preco: "R$ 349,00" },
+            { nome: "Mini Mixer Misturador De Bebidas Elétrico 2 Em 1 Portátil Recarregável Mexedor De Ovos Whey Leite Café Espuma Shake Drinks Capuccino Suco Comica", img: "https://http2.mlstatic.com/D_NQ_NP_2X_906444-MLA113292060459_062026-F.webp", link: "https://meli.la/1m21XXH", preco: "R$ 21,99" },
+            { nome: "Jogo de Copos de Vidro Long Drink para Água e Suco 255ml 6pcs Ruvolo", img: "https://http2.mlstatic.com/D_NQ_NP_2X_810600-MLA111193875310_052026-F.webp", link: "https://meli.la/1RKzvvT", preco: "R$ 27,30" }
+        ];
+
+        // ===== VARIÁVEIS GLOBAIS =====
+        const container = document.getElementById('productsContainer');
+        let currentIndex = 0;
+        const itemsPerLoad = 8;
+        let allCards = []; // Armazena todos os cards renderizados
+        let filteredProducts = []; // Produtos filtrados pela busca
+
+        // ===== FUNÇÃO PARA CRIAR CARD =====
+        function createCard(product) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.dataset.nome = product.nome.toLowerCase();
+            card.innerHTML = `
+                <img src="${product.img}" alt="${product.nome}" loading="lazy">
+                <div class="product-info">
+                    <h4>${product.nome}</h4>
+                    <div class="category-tag"><i class="bi bi-tag"></i> Utensílio doméstico</div>
+                    <div class="card-footer">
+                        <span class="price">${product.preco}</span>
+                        <a href="${product.link}" target="_blank" rel="noopener noreferrer" class="btn-afiliado">
+                            <i class="bi bi-bag-fill"></i> Ver Oferta
+                        </a>
+                    </div>
+                </div>
+            `;
+            return card;
+        }
+
+        // ===== FUNÇÃO PARA RENDERIZAR PRODUTOS =====
+        function renderProducts(products, append = true) {
+            if (!append) {
+                container.innerHTML = '';
+                allCards = [];
+            }
+
+            const start = append ? allCards.length : 0;
+            const end = Math.min(start + itemsPerLoad, products.length);
+
+            for (let i = start; i < end; i++) {
+                const card = createCard(products[i]);
+                container.appendChild(card);
+                allCards.push(card);
+            }
+
+            currentIndex = end;
+
+            // Atualizar botão "Carregar mais"
+            const loadBtn = document.getElementById('loadMoreBtn');
+            if (currentIndex >= products.length) {
+                loadBtn.textContent = 'Todos os produtos carregados';
+                loadBtn.disabled = true;
+            } else {
+                loadBtn.textContent = 'Carregar mais produtos';
+                loadBtn.disabled = false;
+            }
+        }
+
+        // ===== FUNÇÃO DE BUSCA =====
+        function searchProducts(query) {
+            const searchTerm = query.toLowerCase().trim();
+            
+            // Limpar container e allCards
+            container.innerHTML = '';
+            allCards = [];
+
+            if (searchTerm === '') {
+                // Se busca estiver vazia, mostrar todos os produtos
+                filteredProducts = [...produtos];
+                currentIndex = 0;
+                renderProducts(filteredProducts);
+                return;
+            }
+
+            // Filtrar produtos
+            filteredProducts = produtos.filter(p => 
+                p.nome.toLowerCase().includes(searchTerm)
+            );
+
+            if (filteredProducts.length === 0) {
+                // Mostrar mensagem de nenhum resultado
+                container.innerHTML = `
+                    <div class="no-results">
+                        <i class="bi bi-search"></i>
+                        <p>Nenhum produto encontrado para "<strong>${query}</strong>"</p>
+                        <p style="font-size: 0.9rem; margin-top: 8px;">Tente buscar por outro termo</p>
+                    </div>
+                `;
+                document.getElementById('loadMoreBtn').textContent = 'Todos os produtos carregados';
+                document.getElementById('loadMoreBtn').disabled = true;
+                return;
+            }
+
+            // Renderizar resultados da busca
+            currentIndex = 0;
+            renderProducts(filteredProducts);
+        }
+
+        // ===== EVENTOS DA BUSCA =====
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+
+        // Buscar ao clicar no botão
+        searchButton.addEventListener('click', function() {
+            searchProducts(searchInput.value);
+        });
+
+        // Buscar ao pressionar Enter
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                searchProducts(searchInput.value);
+            }
+        });
+
+        // Buscar em tempo real (opcional - descomente se quiser)
+        // searchInput.addEventListener('input', function() {
+        //     searchProducts(this.value);
+        // });
+
+        // ===== BOTÃO "CARREGAR MAIS" =====
+        document.getElementById('loadMoreBtn').addEventListener('click', function() {
+            const productsToRender = filteredProducts.length > 0 ? filteredProducts : produtos;
+            if (currentIndex < productsToRender.length) {
+                renderProducts(productsToRender);
+            }
+        });
+
+        // ===== CARREGAR INICIAL =====
+        filteredProducts = [...produtos];
+        renderProducts(filteredProducts);
+    </script>
+
+</body>
+
+</html>
