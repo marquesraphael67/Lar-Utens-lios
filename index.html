@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lar & Utensílios | Sua vitrine de ofertas</title>
+    <title>OfertasMix | Sua vitrine de ofertas</title>
 
     <meta name="description"
-        content="Encontre os melhores utensílios para sua casa em um só lugar. Clique e compre diretamente no Mercado Livre.">
+        content="Encontre milhares de produtos em um só lugar. Clique e compre diretamente no Mercado Livre.">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet"
@@ -31,8 +31,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #fdf8f0;
-            color: #3e2e1f;
+            background-color: #f4f4f4;
+            color: #2d2d2d;
         }
 
         .container {
@@ -43,10 +43,10 @@
 
         /* ===== TOP BAR ===== */
         .top-bar {
-            background-color: #d9b382;
+            background-color: #f5c518;
             padding: 8px 0;
             font-size: 0.85rem;
-            color: #fdf8f0;
+            color: #1a1a1a;
         }
 
         .top-bar .container {
@@ -62,7 +62,7 @@
         }
 
         .top-right a {
-            color: #fdf8f0;
+            color: #1a1a1a;
             text-decoration: none;
         }
 
@@ -72,9 +72,9 @@
 
         /* ===== HEADER ===== */
         header {
-            background-color: #fffbf5;
+            background-color: #ffffff;
             padding: 16px 0;
-            border-bottom: 2px solid #e9d6be;
+            border-bottom: 2px solid #e0e0e0;
         }
 
         .header-grid {
@@ -90,18 +90,18 @@
             align-items: center;
             gap: 10px;
             text-decoration: none;
-            color: #3e2e1f;
+            color: #2d2d2d;
         }
 
         .logo-icon {
-            background-color: #d9b382;
+            background-color: #f5c518;
             width: 44px;
             height: 44px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
+            color: #1a1a1a;
             font-size: 1.4rem;
         }
 
@@ -109,12 +109,12 @@
             font-size: 1.6rem;
             font-weight: 700;
             line-height: 1.1;
-            color: #4d2e1b;
+            color: #1a1a1a;
         }
 
         .logo span {
             font-size: 0.75rem;
-            color: #8b6f51;
+            color: #666;
             font-weight: 400;
         }
 
@@ -134,43 +134,43 @@
         .search input {
             flex: 1;
             padding: 10px 16px;
-            border: 2px solid #e9d6be;
+            border: 2px solid #d4d4d4;
             border-radius: 30px 0 0 30px;
             outline: none;
             font-family: 'Poppins', sans-serif;
-            background: #fffcf7;
-            color: #3e2e1f;
+            background: #f9f9f9;
+            color: #2d2d2d;
             transition: border-color 0.3s;
         }
 
         .search input:focus {
-            border-color: #b88a4b;
+            border-color: #f5c518;
         }
 
         .search button {
             padding: 10px 18px;
-            background-color: #d9b382;
-            border: 2px solid #d9b382;
+            background-color: #f5c518;
+            border: 2px solid #f5c518;
             border-radius: 0 30px 30px 0;
-            color: #fff;
+            color: #1a1a1a;
             cursor: pointer;
             font-size: 1rem;
             transition: 0.2s;
         }
 
         .search button:hover {
-            background-color: #b88a4b;
-            border-color: #b88a4b;
+            background-color: #e0b014;
+            border-color: #e0b014;
         }
 
-        /* ===== SUGESTÕES DE BUSCA (AUTOCOMPLETE) ===== */
+        /* ===== SUGESTÕES DE BUSCA ===== */
         .search-suggestions {
             position: absolute;
             top: 100%;
             left: 0;
             right: 0;
             background: #ffffff;
-            border: 2px solid #e9d6be;
+            border: 2px solid #d4d4d4;
             border-top: none;
             border-radius: 0 0 20px 20px;
             max-height: 300px;
@@ -191,11 +191,11 @@
             align-items: center;
             gap: 12px;
             transition: 0.2s;
-            border-bottom: 1px solid #f5ebe0;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .search-suggestions .suggestion-item:hover {
-            background-color: #f5ebe0;
+            background-color: #f9f9f9;
         }
 
         .search-suggestions .suggestion-item:last-child {
@@ -207,7 +207,7 @@
             height: 36px;
             object-fit: cover;
             border-radius: 8px;
-            background: #f7efe6;
+            background: #f0f0f0;
         }
 
         .search-suggestions .suggestion-item .suggestion-info {
@@ -217,7 +217,7 @@
         .search-suggestions .suggestion-item .suggestion-info .suggestion-name {
             font-size: 0.85rem;
             font-weight: 500;
-            color: #3e2e1f;
+            color: #2d2d2d;
         }
 
         .search-suggestions .suggestion-item .suggestion-info .suggestion-price {
@@ -228,13 +228,13 @@
 
         .search-suggestions .suggestion-item .suggestion-info .suggestion-category {
             font-size: 0.65rem;
-            color: #8b6f51;
+            color: #666;
         }
 
         .search-suggestions .suggestion-empty {
             padding: 16px;
             text-align: center;
-            color: #8b6f51;
+            color: #666;
             font-size: 0.9rem;
         }
 
@@ -243,17 +243,17 @@
         }
 
         .search-suggestions::-webkit-scrollbar-track {
-            background: #f5ebe0;
+            background: #f0f0f0;
             border-radius: 10px;
         }
 
         .search-suggestions::-webkit-scrollbar-thumb {
-            background: #d9b382;
+            background: #d4d4d4;
             border-radius: 10px;
         }
 
         .search-suggestions::-webkit-scrollbar-thumb:hover {
-            background: #b88a4b;
+            background: #b0b0b0;
         }
 
         .header-actions {
@@ -266,29 +266,29 @@
             flex-direction: column;
             align-items: center;
             text-decoration: none;
-            color: #5d432b;
+            color: #4a4a4a;
             font-size: 0.7rem;
             transition: 0.2s;
         }
 
         .header-actions a i {
             font-size: 1.3rem;
-            color: #8b6f51;
+            color: #666;
         }
 
         .header-actions a:hover {
-            color: #b88a4b;
+            color: #f5c518;
         }
 
         .header-actions a:hover i {
-            color: #b88a4b;
+            color: #f5c518;
         }
 
         /* ===== MENU ===== */
         .menu {
-            background-color: #f5ebe0;
+            background-color: #ffffff;
             padding: 10px 0;
-            border-bottom: 1px solid #e9d6be;
+            border-bottom: 1px solid #e0e0e0;
             overflow-x: auto;
         }
 
@@ -300,7 +300,7 @@
 
         .menu a {
             text-decoration: none;
-            color: #5d432b;
+            color: #4a4a4a;
             font-size: 0.8rem;
             font-weight: 500;
             white-space: nowrap;
@@ -312,19 +312,19 @@
         }
 
         .menu a:hover {
-            color: #b88a4b;
+            color: #f5c518;
         }
 
         .menu a.active {
-            color: #b88a4b;
+            color: #f5c518;
             font-weight: 700;
         }
 
         /* ===== HERO ===== */
         .hero {
             padding: 50px 0 40px;
-            background: linear-gradient(135deg, #fffbf5 0%, #f5ebe0 100%);
-            border-bottom: 2px solid #e9d6be;
+            background: linear-gradient(135deg, #f9f9f9 0%, #e8e8e8 100%);
+            border-bottom: 2px solid #e0e0e0;
         }
 
         .hero-grid {
@@ -336,8 +336,8 @@
 
         .hero-text .badge {
             display: inline-block;
-            background-color: #d9b382;
-            color: #fff;
+            background-color: #f5c518;
+            color: #1a1a1a;
             padding: 4px 16px;
             border-radius: 30px;
             font-size: 0.7rem;
@@ -349,20 +349,20 @@
         .hero-text h2 {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #4d2e1b;
+            color: #1a1a1a;
             line-height: 1.2;
             margin-bottom: 12px;
         }
 
         .hero-text p {
-            color: #6b4f33;
+            color: #4a4a4a;
             font-size: 1rem;
             margin-bottom: 24px;
             line-height: 1.6;
         }
 
         .hero-text p strong {
-            color: #b88a4b;
+            color: #f5c518;
         }
 
         .hero-buttons {
@@ -372,8 +372,8 @@
         }
 
         .btn-primary {
-            background-color: #d9b382;
-            color: #fff;
+            background-color: #f5c518;
+            color: #1a1a1a;
             padding: 12px 28px;
             border-radius: 30px;
             text-decoration: none;
@@ -385,18 +385,18 @@
         }
 
         .btn-primary:hover {
-            background-color: #b88a4b;
+            background-color: #e0b014;
             transform: translateY(-2px);
         }
 
         .btn-secondary {
             background-color: transparent;
-            color: #5d432b;
+            color: #4a4a4a;
             padding: 12px 28px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            border: 2px solid #d9b382;
+            border: 2px solid #d4d4d4;
             transition: 0.2s;
             display: inline-flex;
             align-items: center;
@@ -404,8 +404,8 @@
         }
 
         .btn-secondary:hover {
-            background-color: #f5ebe0;
-            border-color: #b88a4b;
+            background-color: #f0f0f0;
+            border-color: #f5c518;
         }
 
         .hero-image img {
@@ -413,14 +413,14 @@
             max-height: 320px;
             object-fit: cover;
             border-radius: 24px;
-            box-shadow: 0 8px 30px rgba(150, 110, 70, 0.15);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
 
         /* ===== BENEFÍCIOS ===== */
         .benefits {
             padding: 40px 0;
-            background-color: #fffbf5;
-            border-bottom: 2px solid #e9d6be;
+            background-color: #ffffff;
+            border-bottom: 2px solid #e0e0e0;
         }
 
         .benefits .container {
@@ -436,25 +436,25 @@
 
         .benefit i {
             font-size: 2.2rem;
-            color: #d9b382;
+            color: #f5c518;
             margin-bottom: 8px;
         }
 
         .benefit h3 {
             font-size: 1rem;
-            color: #4d2e1b;
+            color: #1a1a1a;
         }
 
         .benefit p {
             font-size: 0.85rem;
-            color: #8b6f51;
+            color: #666;
         }
 
         /* ===== CATEGORIAS ===== */
         .categories {
             padding: 50px 0 40px;
-            background-color: #fdf8f0;
-            border-bottom: 2px solid #e9d6be;
+            background-color: #f4f4f4;
+            border-bottom: 2px solid #e0e0e0;
         }
 
         .section-title {
@@ -465,11 +465,11 @@
         .section-title h2 {
             font-size: 2rem;
             font-weight: 700;
-            color: #4d2e1b;
+            color: #1a1a1a;
         }
 
         .section-title p {
-            color: #8b6f51;
+            color: #666;
             font-size: 0.95rem;
         }
 
@@ -480,8 +480,8 @@
         }
 
         .category {
-            background-color: #fffbf5;
-            border: 2px solid #e9d6be;
+            background-color: #ffffff;
+            border: 2px solid #e0e0e0;
             border-radius: 16px;
             padding: 16px 8px;
             text-align: center;
@@ -490,28 +490,28 @@
         }
 
         .category:hover {
-            border-color: #d9b382;
-            background-color: #f5ebe0;
+            border-color: #f5c518;
+            background-color: #f9f9f9;
             transform: translateY(-4px);
         }
 
         .category.active {
-            border-color: #b88a4b;
-            background-color: #d9b382;
-            color: #fff;
+            border-color: #f5c518;
+            background-color: #f5c518;
+            color: #1a1a1a;
         }
 
         .category.active i {
-            color: #fff;
+            color: #1a1a1a;
         }
 
         .category.active span {
-            color: #fff;
+            color: #1a1a1a;
         }
 
         .category i {
             font-size: 1.8rem;
-            color: #b88a4b;
+            color: #f5c518;
             display: block;
             margin-bottom: 6px;
         }
@@ -519,7 +519,7 @@
         .category span {
             font-size: 0.8rem;
             font-weight: 500;
-            color: #5d432b;
+            color: #4a4a4a;
         }
 
         /* ===== CONTADOR DE PRODUTOS ===== */
@@ -527,17 +527,17 @@
             text-align: center;
             margin-bottom: 20px;
             font-size: 0.9rem;
-            color: #8b6f51;
+            color: #666;
         }
 
         .product-counter strong {
-            color: #4d2e1b;
+            color: #1a1a1a;
         }
 
         /* ===== PRODUTOS ===== */
         .products {
             padding: 50px 0 40px;
-            background-color: #fffbf5;
+            background-color: #f4f4f4;
         }
 
         .products-grid {
@@ -549,7 +549,7 @@
         .product-card {
             background-color: #ffffff;
             border-radius: 20px;
-            border: 1px solid #f0e2d2;
+            border: 1px solid #e0e0e0;
             overflow: hidden;
             transition: 0.3s;
             display: flex;
@@ -559,8 +559,8 @@
 
         .product-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(150, 110, 70, 0.12);
-            border-color: #d9b382;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            border-color: #f5c518;
         }
 
         /* Selo de desconto */
@@ -582,7 +582,7 @@
             width: 100%;
             aspect-ratio: 1/1;
             object-fit: cover;
-            background: #f7efe6;
+            background: #f0f0f0;
             padding: 8px;
         }
 
@@ -596,7 +596,7 @@
         .product-info h4 {
             font-size: 0.95rem;
             font-weight: 600;
-            color: #3e2e1f;
+            color: #2d2d2d;
             margin-bottom: 4px;
             line-height: 1.3;
             display: -webkit-box;
@@ -607,12 +607,12 @@
 
         .product-info .category-tag {
             font-size: 0.7rem;
-            color: #8b6f51;
+            color: #666;
             margin-bottom: 8px;
         }
 
         .product-info .category-tag i {
-            color: #b88a4b;
+            color: #f5c518;
             margin-right: 4px;
         }
 
@@ -647,14 +647,14 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            border-top: 1px solid #f0e2d2;
+            border-top: 1px solid #f0f0f0;
             padding-top: 12px;
         }
 
-        /* ===== BOTÃO COMPRAR ESTILIZADO ===== */
+        /* ===== BOTÃO COMPRAR ===== */
         .btn-comprar {
-            background: linear-gradient(135deg, #d9b382 0%, #b88a4b 100%);
-            color: #fff;
+            background: linear-gradient(135deg, #f5c518 0%, #e0b014 100%);
+            color: #1a1a1a;
             padding: 10px 16px;
             border-radius: 30px;
             text-decoration: none;
@@ -668,14 +668,14 @@
             gap: 8px;
             width: 100%;
             letter-spacing: 0.5px;
-            box-shadow: 0 4px 12px rgba(184, 138, 75, 0.3);
+            box-shadow: 0 4px 12px rgba(245, 197, 24, 0.3);
             animation: pulse 2s infinite;
         }
 
         .btn-comprar:hover {
             transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(184, 138, 75, 0.4);
-            background: linear-gradient(135deg, #c9a06a 0%, #a87f58 100%);
+            box-shadow: 0 6px 20px rgba(245, 197, 24, 0.4);
+            background: linear-gradient(135deg, #e0b014 0%, #c99c0f 100%);
         }
 
         .btn-comprar:active {
@@ -688,13 +688,13 @@
 
         @keyframes pulse {
             0% {
-                box-shadow: 0 4px 12px rgba(184, 138, 75, 0.3);
+                box-shadow: 0 4px 12px rgba(245, 197, 24, 0.3);
             }
             50% {
-                box-shadow: 0 4px 20px rgba(184, 138, 75, 0.5);
+                box-shadow: 0 4px 20px rgba(245, 197, 24, 0.5);
             }
             100% {
-                box-shadow: 0 4px 12px rgba(184, 138, 75, 0.3);
+                box-shadow: 0 4px 12px rgba(245, 197, 24, 0.3);
             }
         }
 
@@ -702,14 +702,14 @@
         .no-results {
             text-align: center;
             padding: 40px 20px;
-            color: #8b6f51;
+            color: #666;
             font-size: 1.1rem;
             grid-column: 1 / -1;
         }
 
         .no-results i {
             font-size: 3rem;
-            color: #d9b382;
+            color: #d4d4d4;
             display: block;
             margin-bottom: 16px;
         }
@@ -721,8 +721,8 @@
 
         .load-more button {
             background-color: transparent;
-            border: 2px solid #d9b382;
-            color: #5d432b;
+            border: 2px solid #d4d4d4;
+            color: #4a4a4a;
             padding: 12px 40px;
             border-radius: 30px;
             font-family: 'Poppins', sans-serif;
@@ -732,8 +732,9 @@
         }
 
         .load-more button:hover {
-            background-color: #d9b382;
-            color: #fff;
+            background-color: #f5c518;
+            border-color: #f5c518;
+            color: #1a1a1a;
         }
 
         .load-more button:disabled {
@@ -743,25 +744,26 @@
 
         .load-more button:disabled:hover {
             background-color: transparent;
-            color: #5d432b;
+            border-color: #d4d4d4;
+            color: #4a4a4a;
         }
 
         /* ===== NEWSLETTER ===== */
         .newsletter {
             padding: 50px 0;
-            background: linear-gradient(135deg, #f5ebe0 0%, #e9d6be 100%);
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
             text-align: center;
-            border-top: 2px solid #d9b382;
-            border-bottom: 2px solid #d9b382;
+            border-top: 2px solid #d4d4d4;
+            border-bottom: 2px solid #d4d4d4;
         }
 
         .newsletter h2 {
             font-size: 2rem;
-            color: #4d2e1b;
+            color: #1a1a1a;
         }
 
         .newsletter p {
-            color: #5d432b;
+            color: #4a4a4a;
             margin-bottom: 16px;
         }
 
@@ -774,19 +776,19 @@
         .newsletter-form input {
             flex: 1;
             padding: 12px 18px;
-            border: 2px solid #d9b382;
+            border: 2px solid #d4d4d4;
             border-radius: 30px 0 0 30px;
             outline: none;
             font-family: 'Poppins', sans-serif;
-            background: #fffcf7;
+            background: #ffffff;
         }
 
         .newsletter-form button {
             padding: 12px 24px;
-            background-color: #d9b382;
-            border: 2px solid #d9b382;
+            background-color: #f5c518;
+            border: 2px solid #f5c518;
             border-radius: 0 30px 30px 0;
-            color: #fff;
+            color: #1a1a1a;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             cursor: pointer;
@@ -794,15 +796,15 @@
         }
 
         .newsletter-form button:hover {
-            background-color: #b88a4b;
-            border-color: #b88a4b;
+            background-color: #e0b014;
+            border-color: #e0b014;
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background-color: #f5ebe0;
+            background-color: #ffffff;
             padding: 40px 0 20px;
-            border-top: 2px solid #d9b382;
+            border-top: 2px solid #e0e0e0;
         }
 
         .footer-grid {
@@ -813,24 +815,24 @@
 
         .footer-grid h3 {
             font-size: 1.4rem;
-            color: #4d2e1b;
+            color: #1a1a1a;
         }
 
         .footer-grid h4 {
             font-size: 1rem;
-            color: #4d2e1b;
+            color: #1a1a1a;
             margin-bottom: 8px;
         }
 
         .footer-grid p {
-            color: #6b4f33;
+            color: #4a4a4a;
             font-size: 0.85rem;
             line-height: 1.5;
         }
 
         .footer-grid a {
             display: block;
-            color: #6b4f33;
+            color: #4a4a4a;
             text-decoration: none;
             font-size: 0.85rem;
             margin-bottom: 4px;
@@ -838,7 +840,7 @@
         }
 
         .footer-grid a:hover {
-            color: #b88a4b;
+            color: #f5c518;
         }
 
         .footer-grid a i {
@@ -849,24 +851,24 @@
             text-align: center;
             margin-top: 32px;
             padding-top: 16px;
-            border-top: 1px solid #e9d6be;
+            border-top: 1px solid #e0e0e0;
             font-size: 0.75rem;
-            color: #8b6f51;
+            color: #666;
         }
 
         .footer-bottom .ml-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: #fffcf7;
+            background: #f9f9f9;
             padding: 6px 18px;
             border-radius: 30px;
-            border: 1px solid #d9b382;
+            border: 1px solid #e0e0e0;
             margin-top: 8px;
         }
 
         .footer-bottom .ml-badge i {
-            color: #b88a4b;
+            color: #f5c518;
             font-size: 1.2rem;
         }
 
@@ -1042,19 +1044,18 @@
             <div class="header-grid">
                 <a href="#" class="logo">
                     <div class="logo-icon">
-                        <i class="bi bi-house-fill"></i>
+                        <i class="bi bi-grid-fill"></i>
                     </div>
                     <div>
-                        <h1>Lar&Utensílios</h1>
+                        <h1>OfertasMix</h1>
                         <span>Milhares de ofertas</span>
                     </div>
                 </a>
                 <div class="search-wrapper">
                     <div class="search">
-                        <input type="text" id="searchInput" placeholder="Buscar utensílios..." autocomplete="off">
+                        <input type="text" id="searchInput" placeholder="Buscar produtos..." autocomplete="off">
                         <button id="searchButton"><i class="bi bi-search"></i></button>
                     </div>
-                    <!-- SUGESTÕES DE BUSCA -->
                     <div class="search-suggestions" id="searchSuggestions"></div>
                 </div>
                 <div class="header-actions">
@@ -1076,26 +1077,27 @@
     </header>
 
     <!-- ===== MENU ===== -->
-    <nav class="menu">
-        <div class="container">
-            <a href="#" class="active" data-categoria="todos"><i class="bi bi-grid-fill"></i> Todos</a>
-            <a href="#" data-categoria="panelas"><i class="bi bi-fire"></i> Panelas</a>
-            <a href="#" data-categoria="copos"><i class="bi bi-cup-straw"></i> Copos</a>
-            <a href="#" data-categoria="potes"><i class="bi bi-box-seam"></i> Potes</a>
-            <a href="#" data-categoria="utensilios"><i class="bi bi-egg-fried"></i> Utensílios</a>
-            <a href="#" data-categoria="talheres"><i class="bi bi-basket2"></i> Talheres</a>
-            <a href="#" data-categoria="eletronicos"><i class="bi bi-lightning"></i> Eletrônicos</a>
-            <a href="#" data-categoria="cafe"><i class="bi bi-cup-hot"></i> Café</a>
-            <a href="#" data-categoria="assadeiras"><i class="bi bi-grid-3x3-gap-fill"></i> Assadeiras</a>
-        </div>
-    </nav>
+<nav class="menu">
+    <div class="container">
+        <a href="#" class="active" data-categoria="todos"><i class="bi bi-grid-fill"></i> Todos</a>
+        <a href="#" data-categoria="eletronicos"><i class="bi bi-phone"></i> Eletrônicos</a>
+        <a href="#" data-categoria="moda"><i class="bi bi-person-arms-up"></i> Moda</a>
+        <a href="#" data-categoria="casa"><i class="bi bi-house-heart"></i> Casa</a>
+        <a href="#" data-categoria="automotivo"><i class="bi bi-car-front-fill"></i> Automotivo</a>
+        <a href="#" data-categoria="games"><i class="bi bi-joystick"></i> Games</a>
+        <a href="#" data-categoria="ferramentas"><i class="bi bi-wrench"></i> Ferramentas</a>
+        <a href="#" data-categoria="beleza"><i class="bi bi-flower2"></i> Beleza</a>
+        <a href="#" data-categoria="esportes"><i class="bi bi-bicycle"></i> Esportes</a>
+        <a href="#" data-categoria="livros"><i class="bi bi-book-half"></i> Livros</a>
+    </div>
+</nav>
 
     <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="container hero-grid">
             <div class="hero-text">
                 <span class="badge"> OFERTAS IMPERDÍVEIS</span>
-                <h2>Utensílios para sua casa com até <span style="color:#e74c3c;">50% OFF</span></h2>
+                <h2>Produtos para todos os gostos com os melhores preços</h2>
                 <p>
                     Escolha seu produto, clique em <strong>Comprar</strong>
                     e finalize sua compra diretamente no Mercado Livre com preços incríveis!
@@ -1106,7 +1108,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1678108040468-0cc9addd984d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Utensílios de cozinha">
+                <img src="https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29tcHJhJTIwb25saW5lfGVufDB8fDB8fHww" alt="Variedade de produtos">
             </div>
         </div>
     </section>
@@ -1138,59 +1140,63 @@
     </section>
 
     <!-- ===== CATEGORIAS ===== -->
-    <section class="categories" id="categorias">
-        <div class="container">
-            <div class="section-title">
-                <h2>Categorias</h2>
-                <p>Encontre exatamente o que procura para sua casa</p>
+<section class="categories" id="categorias">
+    <div class="container">
+        <div class="section-title">
+            <h2>Categorias</h2>
+            <p>Encontre exatamente o que procura</p>
+        </div>
+        <div class="category-grid" id="categoryGrid">
+            <div class="category active" data-categoria="todos">
+                <i class="bi bi-grid-fill"></i>
+                <span>Todos</span>
             </div>
-            <div class="category-grid" id="categoryGrid">
-                <div class="category active" data-categoria="todos">
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Todos</span>
-                </div>
-                <div class="category" data-categoria="panelas">
-                    <i class="bi bi-fire"></i>
-                    <span>Panelas</span>
-                </div>
-                <div class="category" data-categoria="copos">
-                    <i class="bi bi-cup-straw"></i>
-                    <span>Copos</span>
-                </div>
-                <div class="category" data-categoria="potes">
-                    <i class="bi bi-box-seam"></i>
-                    <span>Potes</span>
-                </div>
-                <div class="category" data-categoria="utensilios">
-                    <i class="bi bi-egg-fried"></i>
-                    <span>Utensílios</span>
-                </div>
-                <div class="category" data-categoria="talheres">
-                    <i class="bi bi-basket2"></i>
-                    <span>Talheres</span>
-                </div>
-                <div class="category" data-categoria="eletronicos">
-                    <i class="bi bi-lightning"></i>
-                    <span>Eletrônicos</span>
-                </div>
-                <div class="category" data-categoria="cafe">
-                    <i class="bi bi-cup-hot"></i>
-                    <span>Café</span>
-                </div>
-                <div class="category" data-categoria="assadeiras">
-                    <i class="bi bi-grid-3x3-gap-fill"></i>
-                    <span>Assadeiras</span>
-                </div>
+            <div class="category" data-categoria="eletronicos">
+                <i class="bi bi-phone"></i>
+                <span>Eletrônicos</span>
+            </div>
+            <div class="category" data-categoria="moda">
+                <i class="bi bi-person-arms-up"></i>
+                <span>Moda</span>
+            </div>
+            <div class="category" data-categoria="casa">
+                <i class="bi bi-house-heart"></i>
+                <span>Casa</span>
+            </div>
+            <div class="category" data-categoria="automotivo">
+                <i class="bi bi-car-front-fill"></i>
+                <span>Automotivo</span>
+            </div>
+            <div class="category" data-categoria="games">
+                <i class="bi bi-joystick"></i>
+                <span>Games</span>
+            </div>
+            <div class="category" data-categoria="ferramentas">
+                <i class="bi bi-wrench"></i>
+                <span>Ferramentas</span>
+            </div>
+            <div class="category" data-categoria="beleza">
+                <i class="bi bi-flower2"></i>
+                <span>Beleza</span>
+            </div>
+            <div class="category" data-categoria="esportes">
+                <i class="bi bi-bicycle"></i>
+                <span>Esportes</span>
+            </div>
+            <div class="category" data-categoria="livros">
+                <i class="bi bi-book-half"></i>
+                <span>Livros</span>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- ===== PRODUTOS ===== -->
     <section class="products" id="produtos">
         <div class="container">
             <div class="section-title">
-                <h2>Utensílios em destaque</h2>
-                <p>Os melhores produtos selecionados para sua casa com preços especiais</p>
+                <h2>Produtos em destaque</h2>
+                <p>Os melhores produtos selecionados para você com preços especiais</p>
             </div>
             <div class="product-counter" id="productCounter">
                 Mostrando <strong id="countDisplay">0</strong> produtos
@@ -1208,7 +1214,7 @@
     <section class="newsletter">
         <div class="container">
             <h2>Receba novas ofertas</h2>
-            <p>Cadastre seu e-mail para acompanhar as promoções de utensílios</p>
+            <p>Cadastre seu e-mail para acompanhar as promoções</p>
             <div class="newsletter-form">
                 <input type="email" placeholder="Digite seu e-mail">
                 <button>Receber ofertas</button>
@@ -1220,10 +1226,10 @@
     <footer>
         <div class="container footer-grid">
             <div>
-                <h3>Lar&Utensílios</h3>
+                <h3>OfertasMix</h3>
                 <p>
-                    Uma vitrine moderna para encontrar os melhores utensílios
-                    para sua casa e comprar diretamente no Mercado Livre.
+                    Uma vitrine moderna para encontrar os melhores produtos
+                    e comprar diretamente no Mercado Livre.
                 </p>
             </div>
             <div>
@@ -1234,14 +1240,14 @@
             </div>
             <div>
                 <h4>Categorias</h4>
-                <a href="#">Cozinha</a>
-                <a href="#">Decoração</a>
-                <a href="#">Organização</a>
-                <a href="#">Limpeza</a>
+                <a href="#">Eletrônicos</a>
+                <a href="#">Moda</a>
+                <a href="#">Casa</a>
+                <a href="#">Automotivo</a>
             </div>
             <div>
                 <h4>Redes Sociais</h4>
-                <a href="https://www.instagram.com/lar__utensilios?igsh=MXc2ZXB0d2xtanMxMw=="><i class="bi bi-instagram"></i> Instagram</a>
+                <a href="#"><i class="bi bi-instagram"></i> Instagram</a>
                 <a href="#"><i class="bi bi-facebook"></i> Facebook</a>
                 <a href="#"><i class="bi bi-whatsapp"></i> WhatsApp</a>
             </div>
@@ -1252,263 +1258,265 @@
                 <span>Site afiliado ao Mercado Livre</span>
                 <i class="bi bi-box-arrow-up-right"></i>
             </div>
-            <p style="margin-top: 12px;">&copy; 2026 Lar&Utensílios · Todos os produtos são de terceiros · preços sujeitos a alteração</p>
+            <p style="margin-top: 12px;">&copy; 2026 OfertasMix · Todos os produtos são de terceiros · preços sujeitos a alteração</p>
         </div>
     </footer>
 
     <script>
-        // ===== LISTA DE PRODUTOS =====
+        // ===== LISTA DE PRODUTOS MULTINICHO =====
         const produtos = [
-            { 
-                nome: "Panela De Pressão 7 Litros Alumínio Alegrete Polida 70 Kpa", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_881585-MLB108737359580_032026-F.webp", 
-                link: "https://meli.la/1Z2yEPB", 
-                precoAntigo: 139.90,
-                precoNovo: 111.92,
-                categoria: "panelas"
-            },
-            { 
-                nome: "Jogo De Panelas Kit 5 Aluminio Craqueado Com Tampa De Vidro Preto", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_924941-MLA110953631933_042026-F.webp", 
-                link: "https://meli.la/16uFNxW", 
-                precoAntigo: 224.29,
-                precoNovo: 149.90,
-                categoria: "panelas"
-            },
-            { 
-                nome: "Jogo De Panelas Antiaderente 8 Peças Decorada Teflon Cor Grafite/beje Decorado", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_995648-MLA88989808921_072025-F.webp", 
-                link: "https://meli.la/2K7GHKG", 
-                precoAntigo: 179.99,
-                precoNovo: 148.40,
-                categoria: "panelas"
-            },
-            { 
-                nome: "Jogo De Panelas Sicília 5 Peças Vermelho Tramontina", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_618692-MLA95676841974_102025-F.webp", 
-                link: "https://meli.la/335kozc", 
-                precoAntigo: 643.60,
-                precoNovo: 499.90,
-                categoria: "panelas"
-            },
-            { 
-                nome: "Jogo De Panelas Com 10 Peças Mimo Style Pratic Cook Mármol Cor Branco", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_915093-MLA96277505762_102025-F.webp", 
-                link: "https://meli.la/1SdHqUt", 
-                precoAntigo: 359.00,
-                precoNovo: 347.00,
-                categoria: "panelas"
-            },
-            
-            { 
-                nome: "Kit 10 Potes Herméticos Vidro 640ml Starhouse", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_942823-MLA113526261849_062026-F.webp", 
-                link: "https://meli.la/23Lr4qM", 
-                precoAntigo: 129.90,
-                precoNovo: 95.00,
-                categoria: "potes"
-            },
-            { 
-                nome: "Kit 5 Potes Herméticos Plástico Freezer Microondas Marmita", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_625338-MLB107423341111_022026-F.webp", 
-                link: "https://meli.la/2hWGt1z", 
-                precoAntigo: 49.99,
-                precoNovo: 39.00,
-                categoria: "potes"
-            },
-            { 
-                nome: "Kit 10 Pote De Vidro Marmita Hermético 640ml Freezer Fitness Borossilicato 4 Travas Micro-ondas Azul-Escuro", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_676567-MLA109280570920_042026-F.webp", 
-                link: "https://meli.la/2ShnPeA", 
-                precoAntigo: 164.80,
-                precoNovo: 110.00,
-                categoria: "potes"
-            },
-            { 
-                nome: "Kit 10 Pote De Vidro Marmita Hermético 370ml Freezer Fitness Rishon", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_605578-MLA113633610823_062026-F.webp", 
-                link: "https://meli.la/1pyAiGK", 
-                precoAntigo: 140.00,
-                precoNovo: 66.00,
-                categoria: "potes"
-            },
-            { 
-                nome: "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_885228-MLA105354697197_012026-F.webp", 
-                link: "https://meli.la/2YMZV9n", 
-                precoAntigo: 99.90,
-                precoNovo: 76.94,
-                categoria: "talheres"
-            },
-            { 
-                nome: "Kit 24 Faqueiro Inox Luxo Bar Restaurante Buffet Talher", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_630944-MLB101339267246_122025-F.webp", 
-                link: "https://meli.la/2x7bACM", 
-                precoAntigo: 85.70,
-                precoNovo: 54.00,
-                categoria: "talheres"
-            },
-            { 
-                nome: "Jogo Para Churrasco Tramontina 12 Peças Jumbo Garfo Faca Cor Marrom", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_991153-MLA99976835503_112025-F.webp", 
-                link: "https://meli.la/31iWP26", 
-                precoAntigo: 196.99,
-                precoNovo: 166.29,
-                categoria: "talheres"
-            },
-            { 
-                nome: "Kit 24 Faqueiro Dourado Talheres Luxo Premium Com Maleta", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_716535-MLB83374492062_042025-F.webp", 
-                link: "https://meli.la/2NYjYpw", 
-                precoAntigo: 89.00,
-                precoNovo: 76.00,
-                categoria: "talheres"
-            },
-            
-            { 
-                nome: "Jogo 3 Formas Assadeira Bolo Torta Retangular", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_844365-MLA100105834885_122025-F.webp", 
-                link: "https://meli.la/18cG1xo", 
-                precoAntigo: 69.90,
-                precoNovo: 49.90,
-                categoria: "assadeiras"
-            },
-            { 
-                nome: "Conjunto Assadeiras 6 Peças de Vidro com Tampa Cinza - Marinex", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_680923-MLA99452904082_112025-F.webp", 
-                link: "https://meli.la/2P4RBk6", 
-                precoAntigo: 199.00,
-                precoNovo: 134.90,
-                categoria: "assadeiras"
-            },
-            { 
-                nome: "Jogo Refratário 3 Assadeiras Marinex Retangulares Nadir Cor Vidro", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_679462-MLA96112414387_102025-F.webp", 
-                link: "https://meli.la/182Jwkr", 
-                precoAntigo: 72.00,
-                precoNovo: 68.16,
-                categoria: "assadeiras"
-            },
-            { 
-                nome: "Kit 3 Travessas Marinex Opaline Oval 3 Tamanhos Forma De Vidro Temperado Branco Alta Resistência Térmica Jogo De Assadeiras Vai ao Forno Microondas Geladeira Freezer Qualidade Premium Fácil de Limpar", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_770060-MLA111192983051_052026-F.webp", 
-                link: "https://meli.la/1dfYTJn", 
-                precoAntigo: 79.99,
-                precoNovo: 62.00,
-                categoria: "assadeiras"
-            },
-            { 
-                nome: "Panela De Arroz Fast Rice 5 Premium Mondial 400W", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_980379-MLA100008293867_122025-F.webp", 
-                link: "https://meli.la/1Ygwrz8", 
-                precoAntigo: 199.90,
-                precoNovo: 144.43,
-                categoria: "eletronicos"
-            },
-            { 
-                nome: "Liquidificador Mondial Turbo Black 5 Velocidades", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_775074-MLA100069529501_122025-F.webp", 
-                link: "https://meli.la/1Utkhfu", 
-                precoAntigo: 179.90,
-                precoNovo: 126.14,
-                categoria: "eletronicos"
-            },
-            { 
-                nome: "Grill E Sanduicheira Maxx Clean 1000W Philco", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_742609-MLA95694260070_102025-F.webp", 
-                link: "https://meli.la/18HuetR", 
-                precoAntigo: 189.90,
-                precoNovo: 134.35,
-                categoria: "eletronicos"
-            },
-            { 
-                nome: "FORNO ELÉTRICO HQ 48D 2000W PRETO", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_992715-MLA95808455335_102025-F.webp", 
-                link: "https://meli.la/2kBmDCg", 
-                precoAntigo: 499.90,
-                precoNovo: 349.00,
-                categoria: "eletronicos"
-            },
-            { 
-                nome: "Aspirador de Pó Vertical e Portátil WAP High Speed Plus 1350W 3 em 1", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_887734-MLA99375017938_112025-F.webp", 
-                link: "https://meli.la/2r4Jm4d", 
-                precoAntigo: 207.00,
-                precoNovo: 164.90,
-                categoria: "eletronicos"
-            },
-            { 
-                nome: "Mini Mixer Misturador De Bebidas Elétrico Portátil", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_906444-MLA113292060459_062026-F.webp", 
-                link: "https://meli.la/1m21XXH", 
-                precoAntigo: 39.90,
-                precoNovo: 21.99,
-                categoria: "utensilios"
-            },
-            { 
-                nome: "Tábua De Cozinha Para Descongelar Mais Rápido Alimentos E Cortar Mágica Multifuncional Premium Moderna Mix", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_698981-MLA109864925179_032026-F.webp", 
-                link: "https://meli.la/1JVMDBt", 
-                precoAntigo: 47.53,
-                precoNovo: 35.86,
-                categoria: "utensilios"
-            },
-            { 
-                nome: "Termômetro Culinário Digital Espeto Alimentos Cozinha Água", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_807863-MLA99596783762_122025-F.webp", 
-                link: "https://meli.la/2fQ5WqL", 
-                precoAntigo: 19.10,
-                precoNovo: 19.10,
-                categoria: "utensilios"
-            },
-            { 
-                nome: "Kit 4 Utensílios Inox Cozinha Colher Concha Escumadeira", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_620484-MLB83922857128_042025-F.webp", 
-                link: "https://meli.la/1SqzW1J", 
-                precoAntigo: 49.99,
-                precoNovo: 29.00,
-                categoria: "utensilios"
-            },
-            { 
-                nome: "Escorredor de Pratos Duplo Desmontavel Black Arthi", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_647192-MLA111286784219_052026-F.webp", 
-                link: "https://meli.la/1juMFdc", 
-                precoAntigo: 61.50,
-                precoNovo: 39.90,
-                categoria: "utensilios"
-            },
-            { 
-                nome: "Jogo de Copos de Vidro Long Drink 255ml 6pcs", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_810600-MLA111193875310_052026-F.webp", 
-                link: "https://meli.la/1RKzvvT", 
-                precoAntigo: 39.90,
-                precoNovo: 27.30,
-                categoria: "copos"
-            },
-            { 
-                nome: "Jogo De Xícaras Com Pires 6 Pç Bubly Bolha Perola", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_683217-MLB111620874038_062026-F.webp", 
-                link: "https://meli.la/2NBWKLx", 
-                precoAntigo: 49.90,
-                precoNovo: 36.77,
-                categoria: "copos"
-            },
-            { 
-                nome: "Jogo 6 Copos De Vidro Canelado Cameratta Agua Suco 420ml", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_625188-MLB87112583962_072025-F.webp", 
-                link: "https://meli.la/29g9H23", 
-                precoAntigo: 78.00,
-                precoNovo: 37.90,
-                categoria: "copos"
-            },
-            { 
-                nome: "Jogo 6 Copos Vidro Diamante Grosso Resistente Agua 300ml Branco Ms Variedades", 
-                img: "https://http2.mlstatic.com/D_NQ_NP_2X_787808-MLA109215385620_042026-F.webp", 
-                link: "https://meli.la/29g9H23", 
-                precoAntigo: 39.90,
-                precoNovo: 24.00,
-                categoria: "copos"
-            },
+    // ===== CASA =====
+    { 
+        nome: "Panela De Pressão 7 Litros Alumínio Alegrete Polida 70 Kpa", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_881585-MLB108737359580_032026-F.webp", 
+        link: "https://meli.la/1Z2yEPB", 
+        precoAntigo: 139.90,
+        precoNovo: 111.92,
+        categoria: "casa"
+    },
+    { 
+        nome: "Jogo De Panelas Kit 5 Alumínio Craqueado Com Tampa De Vidro Preto", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_924941-MLA110953631933_042026-F.webp", 
+        link: "https://meli.la/16uFNxW", 
+        precoAntigo: 224.29,
+        precoNovo: 149.90,
+        categoria: "casa"
+    },
+    { 
+        nome: "Jogo De Panelas Antiaderente 8 Peças Decorada Teflon Cor Grafite/Bege Decorado", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_995648-MLA88989808921_072025-F.webp", 
+        link: "https://meli.la/2K7GHKG", 
+        precoAntigo: 179.99,
+        precoNovo: 148.40,
+        categoria: "casa"
+    },
+    { 
+        nome: "Jogo De Panelas Sicília 5 Peças Vermelho Tramontina", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_618692-MLA95676841974_102025-F.webp", 
+        link: "https://meli.la/335kozc", 
+        precoAntigo: 643.60,
+        precoNovo: 499.90,
+        categoria: "casa"
+    },
+    { 
+        nome: "Jogo De Panelas Com 10 Peças Mimo Style Pratic Cook Mármol Cor Branco", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_915093-MLA96277505762_102025-F.webp", 
+        link: "https://meli.la/1SdHqUt", 
+        precoAntigo: 359.00,
+        precoNovo: 347.00,
+        categoria: "casa"
+    },
+    { 
+        nome: "Kit 10 Potes Herméticos Vidro 640ml Starhouse", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_942823-MLA113526261849_062026-F.webp", 
+        link: "https://meli.la/23Lr4qM", 
+        precoAntigo: 129.90,
+        precoNovo: 95.00,
+        categoria: "casa"
+    },
+    { 
+        nome: "Kit 5 Potes Herméticos Plástico Freezer Microondas Marmita", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_625338-MLB107423341111_022026-F.webp", 
+        link: "https://meli.la/2hWGt1z", 
+        precoAntigo: 49.99,
+        precoNovo: 39.00,
+        categoria: "casa"
+    },
+    { 
+        nome: "Kit 10 Pote De Vidro Marmita Hermético 640ml Freezer Fitness Borossilicato 4 Travas Micro-ondas Azul-Escuro", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_676567-MLA109280570920_042026-F.webp", 
+        link: "https://meli.la/2ShnPeA", 
+        precoAntigo: 164.80,
+        precoNovo: 110.00,
+        categoria: "casa"
+    },
+    { 
+        nome: "Kit 10 Pote De Vidro Marmita Hermético 370ml Freezer Fitness Rishon", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_605578-MLA113633610823_062026-F.webp", 
+        link: "https://meli.la/1pyAiGK", 
+        precoAntigo: 140.00,
+        precoNovo: 66.00,
+        categoria: "casa"
+    },
+    { 
+        nome: "Jogo Talheres Faqueiro Búzios Aço Inox 24 Peças Tramontina", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_885228-MLA105354697197_012026-F.webp", 
+        link: "https://meli.la/2YMZV9n", 
+        precoAntigo: 99.90,
+        precoNovo: 76.94,
+        categoria: "casa"
+    },
+    { 
+        nome: "Kit 24 Faqueiro Inox Luxo Bar Restaurante Buffet Talher", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_630944-MLB101339267246_122025-F.webp", 
+        link: "https://meli.la/2x7bACM", 
+        precoAntigo: 85.70,
+        precoNovo: 54.00,
+        categoria: "casa"
+    },
+    { 
+        nome: "Jogo Para Churrasco Tramontina 12 Peças Jumbo Garfo Faca Cor Marrom", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_991153-MLA99976835503_112025-F.webp", 
+        link: "https://meli.la/31iWP26", 
+        precoAntigo: 196.99,
+        precoNovo: 166.29,
+        categoria: "casa"
+    },
+    { 
+        nome: "Kit 24 Faqueiro Dourado Talheres Luxo Premium Com Maleta", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_716535-MLB83374492062_042025-F.webp", 
+        link: "https://meli.la/2NYjYpw", 
+        precoAntigo: 89.00,
+        precoNovo: 76.00,
+        categoria: "casa"
+    },
+    { 
+        nome: "Jogo 3 Formas Assadeira Bolo Torta Retangular", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_844365-MLA100105834885_122025-F.webp", 
+        link: "https://meli.la/18cG1xo", 
+        precoAntigo: 69.90,
+        precoNovo: 49.90,
+        categoria: "casa"
+    },
+    { 
+        nome: "Conjunto Assadeiras 6 Peças de Vidro com Tampa Cinza - Marinex", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_680923-MLA99452904082_112025-F.webp", 
+        link: "https://meli.la/2P4RBk6", 
+        precoAntigo: 199.00,
+        precoNovo: 134.90,
+        categoria: "casa"
+    },
+    { 
+        nome: "Jogo Refratário 3 Assadeiras Marinex Retangulares Nadir Cor Vidro", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_679462-MLA96112414387_102025-F.webp", 
+        link: "https://meli.la/182Jwkr", 
+        precoAntigo: 72.00,
+        precoNovo: 68.16,
+        categoria: "casa"
+    },
+    { 
+        nome: "Kit 3 Travessas Marinex Opaline Oval 3 Tamanhos Forma De Vidro Temperado Branco Alta Resistência Térmica Jogo De Assadeiras Vai ao Forno Microondas Geladeira Freezer Qualidade Premium Fácil de Limpar", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_770060-MLA111192983051_052026-F.webp", 
+        link: "https://meli.la/1dfYTJn", 
+        precoAntigo: 79.99,
+        precoNovo: 62.00,
+        categoria: "casa"
+    },
+    { 
+        nome: "Jogo de Copos de Vidro Long Drink 255ml 6pcs", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_810600-MLA111193875310_052026-F.webp", 
+        link: "https://meli.la/1RKzvvT", 
+        precoAntigo: 39.90,
+        precoNovo: 27.30,
+        categoria: "casa"
+    },
+    { 
+        nome: "Jogo De Xícaras Com Pires 6 Pç Bubly Bolha Perola", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_683217-MLB111620874038_062026-F.webp", 
+        link: "https://meli.la/2NBWKLx", 
+        precoAntigo: 49.90,
+        precoNovo: 36.77,
+        categoria: "casa"
+    },
+    { 
+        nome: "Jogo 6 Copos De Vidro Canelado Cameratta Agua Suco 420ml", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_625188-MLB87112583962_072025-F.webp", 
+        link: "https://meli.la/29g9H23", 
+        precoAntigo: 78.00,
+        precoNovo: 37.90,
+        categoria: "casa"
+    },
+    { 
+        nome: "Jogo 6 Copos Vidro Diamante Grosso Resistente Agua 300ml Branco Ms Variedades", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_787808-MLA109215385620_042026-F.webp", 
+        link: "https://meli.la/29g9H23", 
+        precoAntigo: 39.90,
+        precoNovo: 24.00,
+        categoria: "casa"
+    },
+    { 
+        nome: "Mini Mixer Misturador De Bebidas Elétrico Portátil", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_906444-MLA113292060459_062026-F.webp", 
+        link: "https://meli.la/1m21XXH", 
+        precoAntigo: 39.90,
+        precoNovo: 21.99,
+        categoria: "casa"
+    },
+    { 
+        nome: "Tábua De Cozinha Para Descongelar Mais Rápido Alimentos E Cortar Mágica Multifuncional Premium Moderna Mix", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_698981-MLA109864925179_032026-F.webp", 
+        link: "https://meli.la/1JVMDBt", 
+        precoAntigo: 47.53,
+        precoNovo: 35.86,
+        categoria: "casa"
+    },
+    { 
+        nome: "Termômetro Culinário Digital Espeto Alimentos Cozinha Água", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_807863-MLA99596783762_122025-F.webp", 
+        link: "https://meli.la/2fQ5WqL", 
+        precoAntigo: 19.10,
+        precoNovo: 19.10,
+        categoria: "casa"
+    },
+    { 
+        nome: "Kit 4 Utensílios Inox Cozinha Colher Concha Escumadeira", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_620484-MLB83922857128_042025-F.webp", 
+        link: "https://meli.la/1SqzW1J", 
+        precoAntigo: 49.99,
+        precoNovo: 29.00,
+        categoria: "casa"
+    },
+    { 
+        nome: "Escorredor de Pratos Duplo Desmontavel Black Arthi", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_647192-MLA111286784219_052026-F.webp", 
+        link: "https://meli.la/1juMFdc", 
+        precoAntigo: 61.50,
+        precoNovo: 39.90,
+        categoria: "casa"
+    },
+
+    // ===== ELETRÔNICOS =====
+    { 
+        nome: "Panela De Arroz Fast Rice 5 Premium Mondial 400W - NPE-08-5X", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_980379-MLA100008293867_122025-F.webp", 
+        link: "https://meli.la/1Ygwrz8", 
+        precoAntigo: 199.90,
+        precoNovo: 144.43,
+        categoria: "eletronicos"
+    },
+    { 
+        nome: "Liquidificador Mondial Turbo Black L900fb 5 Velocidades", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_775074-MLA100069529501_122025-F.webp", 
+        link: "https://meli.la/1Utkhfu", 
+        precoAntigo: 179.90,
+        precoNovo: 126.14,
+        categoria: "eletronicos"
+    },
+    { 
+        nome: "Grill E Sanduicheira Maxx Clean 1000W Cinza Philco", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_742609-MLA95694260070_102025-F.webp", 
+        link: "https://meli.la/18HuetR", 
+        precoAntigo: 189.90,
+        precoNovo: 134.35,
+        categoria: "eletronicos"
+    },
+    { 
+        nome: "FORNO ELÉTRICO HQ 48D 2000W PRETO", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_992715-MLA95808455335_102025-F.webp", 
+        link: "https://meli.la/2kBmDCg", 
+        precoAntigo: 499.90,
+        precoNovo: 349.00,
+        categoria: "eletronicos"
+    },
+    { 
+        nome: "Aspirador de Pó Vertical e Portátil WAP High Speed Plus 1350W 3 em 1", 
+        img: "https://http2.mlstatic.com/D_NQ_NP_2X_887734-MLA99375017938_112025-F.webp", 
+        link: "https://meli.la/2r4Jm4d", 
+        precoAntigo: 207.00,
+        precoNovo: 164.90,
+        categoria: "eletronicos"
+    }
+
         ];
 
         // ===== VARIÁVEIS GLOBAIS =====
@@ -1648,12 +1656,10 @@
                 return;
             }
 
-            // Filtrar produtos que correspondem à busca
             const matches = produtos.filter(p => 
                 p.nome.toLowerCase().includes(searchTerm)
             );
 
-            // Limitar a 5 sugestões
             const limited = matches.slice(0, 5);
 
             if (limited.length === 0) {
@@ -1685,7 +1691,6 @@
             suggestionsContainer.innerHTML = html;
             suggestionsContainer.classList.add('active');
 
-            // Adicionar evento de clique em cada sugestão
             document.querySelectorAll('.suggestion-item').forEach(item => {
                 item.addEventListener('click', function() {
                     const nome = this.dataset.nome;
@@ -1716,11 +1721,10 @@
             }
             
             filterProducts();
-            // Fechar sugestões após buscar
             suggestionsContainer.classList.remove('active');
         }
 
-        // ===== EVENTOS DA BUSCA COM AUTOCOMPLETE =====
+        // ===== EVENTOS DA BUSCA =====
         searchButton.addEventListener('click', function() {
             searchProducts(searchInput.value);
         });
@@ -1732,12 +1736,10 @@
             }
         });
 
-        // Mostrar sugestões enquanto digita
         searchInput.addEventListener('input', function() {
             showSuggestions(this.value);
         });
 
-        // Fechar sugestões ao clicar fora
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.search-wrapper')) {
                 suggestionsContainer.classList.remove('active');
